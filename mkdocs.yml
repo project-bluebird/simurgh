@@ -1,1 +1,28 @@
 site_name: NATS
+
+nav:
+- Home: index.md
+- User Guide:
+    - 'Getting Started': user-guide/getting-started.md
+    - 'Getting Started Part Deux': user-guide/getting-started-II.md
+- About: about.md
+
+theme:
+    name: readthedocs
+    highlightjs: true
+    # By default, highlight.js only supports 23 common languages.
+    # List additional languages here to include support for them.
+    hljs_languages:
+        - yaml
+
+repo_url: https://github.com/alan-turing-institute/nats
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+# To use MathJax
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+# Allows for Notes, Warnings, Questions etc snippets
+markdown_extensions:
+  - admonition
