@@ -1,0 +1,28 @@
+# This file may be used to create an environment using:
+# $ conda env create --name <env> --file <this file>
+# platform: linux-64
+name: nats
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.6
+  - pyqt
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+
+  - pip:
+    - flask
+    - flask_cors
+    - flask_restful
+    - markdown
+    - msgpack
+    - python-dotenv
+    - pyzmq
+    - pygame
+    - pyqtwebengine
+    - pyopengl
+    - pyopengl-accelerate
