@@ -84,10 +84,17 @@ dependencies:
     - pyopengl-accelerate
 ```
 
-Run `python check.py `will produce the following output:
+```bash
+conda env create -q && conda activate nats
+```
+
+Now that dependencies are install for both Bluesky & Bluebird, we can at least
+check that these are OK by running `check.py` inside the Bluesky repository.
+
+Running `python bluesky/check.py `will produce the following output:
 
 ```bash
-(nats) 13:26:55 ✔ ~/PhD/cdt/placement/repos/bluesky (master) :: python check.py
+(nats) $$ python bluesky/check.py
 This script checks the availability of the libraries required by BlueSky, and
 the capabilities of your system.
 
@@ -114,12 +121,19 @@ Successfully loaded all BlueSky modules. Start BlueSky by running BlueSky.py.
 
 ``````
 
-Inside Bluesky
+The above command only checks the dependencies for Bluesky, if it was indeed
+successful, we can now install Bluesky into the Python path with:
 
 ```bash
 python setup.py install
 ```
 
+From here, all the nessessary items should be installed, Bluesky can now be
+launched with:
+```bash
+(nats) $$ python bluesky/Bluesky.py
+
+```
 ## Documentation
 
 The documentation for this project can be found at `<www.placeholder-website-name.com>`.
@@ -140,4 +154,3 @@ mkdocs build --clean
 ```
 
 followed by `mkdocs serve`
-
