@@ -159,6 +159,57 @@ Now that the instance of the simulator is up and running and connected to the
 desired ports, one can now spin up Bluebird, which is the interface layer
 between the simulator and the AI agents.
 
+## Bluebird
+
+If Bluesky was install successfully, then it should be as simply as doing:
+```bash
+(nats) $$ cd bluebird && python run.py
+```
+This should produce the following output:
+```bash
+2019-08-08 18:08:31 INFO     bluebird.bluebird: Connecting to client...
+Client 0b06b30f connected to host 5dd3f7f1 of version 1.2.1
+2019-08-08 18:08:41 INFO     bluebird.cache.sim_state: speed=0x, ticks=   0, time=, state=INIT, aircraft=0
+2019-08-08 18:08:41 INFO     bluebird.cache.sim_state: Logging started. Initial SIM_LOG_RATE=0.2
+Client active node changed.
+ * Serving Flask app "bluebird.api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+2019-08-08 18:08:46 INFO     bluebird.cache.sim_state: speed=0.0x, ticks=   0, time=00:00:00, state=INIT, aircraft=0
+
+```
+
+Now we have the simulator running, and the interface that sits on top, we can
+now connect our AI agents.
+
+## DoDo
+
+![](./docs/img/dodo-bird.png)
+
+Here
+
+```bash
+git clone https://github.com/alan-turing-institute/dodo.git
+cd dodo/Pydodo
+pip install .
+```
+
+```python
+>>> import pydodo
+>>>
+>>> pydodo.reset_simulation()
+True
+>>>
+```
+Success!
+
+## Birdhouse
+
+## Twitcher (Optional)
+
 ## Documentation
 
 The documentation for this project can be found at `<www.placeholder-website-name.com>`.
