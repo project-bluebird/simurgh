@@ -119,21 +119,46 @@ Could not import pyclipper, RESO SSD will not function
 Using Open Aircraft Performance (OpenAP) model
 Successfully loaded all BlueSky modules. Start BlueSky by running BlueSky.py.
 
-``````
+```
 
 The above command only checks the dependencies for Bluesky, if it was indeed
 successful, we can now install Bluesky into the Python path with:
 
 ```bash
-python setup.py install
+(nats) $$ python setup.py install
 ```
 
-From here, all the nessessary items should be installed, Bluesky can now be
+From here, all the necessary items should be installed, Bluesky can now be
 launched with:
 ```bash
-(nats) $$ python bluesky/Bluesky.py
-
+(nats) $$ cd bluesky && python Bluesky.py
 ```
+
+The above command will start the Bluesky simulator with the in built GUI which
+looks like:
+
+![](./docs/img/redsky-gui.png)
+
+If one would like to run Bluesky _without_ the default GUI, a headless version
+is available with the command:
+
+```bash
+(nats) $$ cd bluesky && python Bluesky.py --headless
+```
+
+If perhaps the user wished to connect the running instance to a remote host this
+can be done with:
+
+```bash
+(nats) $$ cd bluesky && python BlueSky.py --client --bluesky_host=1.2.3.4
+```
+This will skip discovery and attempt a connection to the specified host (using
+the default ports)
+
+Now that the instance of the simulator is up and running and connected to the
+desired ports, one can now spin up Bluebird, which is the interface layer
+between the simulator and the AI agents.
+
 ## Documentation
 
 The documentation for this project can be found at `<www.placeholder-website-name.com>`.
