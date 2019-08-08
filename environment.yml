@@ -26,3 +26,7 @@ dependencies:
     - pyqtwebengine
     - pyopengl
     - pyopengl-accelerate
+    - psutil==5.5.*
+    - pytest==4.1.*
+    - pylint==2.2.*
+    - pylint-exit==1.0.*
