@@ -1,4 +1,4 @@
-site_name: NATS
+site_name: simurgh
 
 nav:
 - Home: index.md
