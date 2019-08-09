@@ -32,7 +32,12 @@ elements that all work together to achieve the aims laid out above; these are:
 # Installation
 
 In order to get things up and running, it is important to emphasise the
-dependencies tree of the packages outlined above.
+dependencies tree of the packages outlined above. When cloning `simugh` be sure
+to run:
+
+```bash
+git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
+```
 
 ![](./docs/img/simurgh-deps.png)
 
@@ -46,7 +51,7 @@ running:
 source install.sh
 ```
 
-This will creat a conda environment call `nats` and install all necessary
+This will create a conda environment call `nats` and install all necessary
 dependencies required. Please see User Guide for how to get going.
 
 ## Bluesky
@@ -234,7 +239,6 @@ python run.py default_input_agents_read_scn.ini
 ## Twitcher (Optional)
 
 ## Run all together
-
 
 * SPIN UP
 ```bash
