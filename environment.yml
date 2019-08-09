@@ -24,6 +24,7 @@ dependencies:
     - python-dotenv
     - pyzmq
     - pygame
+    - pyproj    # birdhouse dep
     - pyqtwebengine
     - pyopengl
     - pyopengl-accelerate
