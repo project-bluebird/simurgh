@@ -32,3 +32,4 @@ dependencies:
     - pytest==4.1.*
     - pylint==2.2.*
     - pylint-exit==1.0.*
+    - ruamel_yaml
