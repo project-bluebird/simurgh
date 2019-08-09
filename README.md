@@ -125,7 +125,7 @@ The above command only checks the dependencies for Bluesky, if it was indeed
 successful, we can now install Bluesky into the Python path with:
 
 ```bash
-(nats) $$ python setup.py install
+(nats) $$ pip install bluesky/
 ```
 
 From here, all the necessary items should be installed, Bluesky can now be
@@ -232,5 +232,8 @@ mkdocs build --clean
 followed by `mkdocs serve`
 
 ## Troubleshooting
+
+## Testing
+
 
 

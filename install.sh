@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## Set up environment and install dependecies
+
 if [ -e "environment.yml" ]; then
   # echo "environment.yml file found"
   # Get environment name associated with 'name' variable in file
@@ -22,19 +24,28 @@ if [ -e "environment.yml" ]; then
   fi
 fi
 
-BLUESKY_DIR=../bluesky/
-BLUEBIRD_DIR=../bluebird/
+## Install Bluesky
+
+BLUESKY_DIR=./bluesky/
+BLUEBIRD_DIR=./bluebird/
 
 python $BLUESKY_DIR/check.py
 if [ $? -eq 0 ]; then
     printf "Installion of Bluesky dependecies OK.\n"
     printf "Installing Bluesky into Python path..\n"
 
-    ( cd $BLUESKY_DIR; python setup.py install )
+    ( cd $BLUESKY_DIR; pip install . )
 
 else
     echo FAIL
     exit 1
 fi
+
+## Install DoDo
+
+DODO_DIR=./dodo/
+
+( cd $DODO_DIR; pip install Pydodo/ )
+
 
 
