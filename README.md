@@ -292,7 +292,17 @@ still hang around, a better command to run would be:
 mkdocs build --clean
 ```
 
-followed by `mkdocs serve`
+When docs have been built, they can then be deployed online to the public facing
+project page [here](https://alan-turing-institute.github.io/simurgh/) with the
+following command:
+```bash
+mkdocs gh-deploy
+```
+This will produce the following output:
+```bash
+INFO    -  Cleaning site directory
+INFO    -  Your documentation should shortly be available at: https://alan-turing-institute.github.io/simurgh/
+```
 
 ## Troubleshooting
 
