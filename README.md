@@ -226,6 +226,42 @@ python run.py default_input_agents_read_scn.ini
 
 ## Twitcher (Optional)
 
+## Run all together
+
+
+* SPIN UP
+```bash
+( cd bluesky && python Bluesky.py --headless ) &
+( cd bluebird && python run.py )
+```
+
+* TEAR DOWN
+```bash
+<CTRL>-C
+fg
+<CTRL>-C
+```
+The tear down output will look similar to:
+
+```bash
+ * Serving Flask app "bluebird.api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Client active node changed.
+ * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+2019-08-09 13:28:40 INFO     bluebird.cache.sim_state: speed=0.0x, ticks=   0, time=00:00:00, state=INIT, aircraft=0
+^C2019-08-09 13:28:43 INFO     bluebird.bluebird: BlueBird stopping
+(nats) $$ fg
+( cd bluesky && python Bluesky.py --headless )
+
+^C# Node(9ca92ee2): Quitting (KeyboardInterrupt)
+# Server quitting (KeyboardInterrupt)
+# Server: Main loop exit. Waiting for spawned processes to exit...
+# Server: Spawned processes joined. Server stopping
+```
+
 ## Documentation
 
 The documentation for this project can be found at `<www.placeholder-website-name.com>`.
@@ -250,6 +286,5 @@ followed by `mkdocs serve`
 ## Troubleshooting
 
 ## Testing
-
 
 
