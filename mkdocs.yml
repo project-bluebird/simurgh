@@ -2,10 +2,13 @@ site_name: simurgh
 
 nav:
 - Home: index.md
+- Installation: install.md
 - User Guide:
     - 'Getting Started': user-guide/getting-started.md
     - 'Getting Started Part Deux': user-guide/getting-started-II.md
-- About: about.md
+- Testing: testing.md
+- Troubleshooting: troubleshooting.md
+- Releases: releases.md
 
 theme:
     name: readthedocs
