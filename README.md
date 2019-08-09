@@ -43,21 +43,17 @@ commands will install all dependencies and start the application using Docker by
 running:
 
 ```bash
-bash install.sh
+source install.sh
 ```
+
+This will creat a conda environment call `nats` and install all necessary
+dependencies required. Please see User Guide for how to get going.
 
 ## Bluesky
 
-Original instructions state:
+Original instructions can be found on:
 
-```bash
-conda install pyqt numpy scipy matplotlib pandas
-
-pip install msgpack pyzmq pygame pyqtwebengine
-```
-
-Found it easier to have `environment.yml` file instead.
-
+However, it has been found to be much easier to have `environment.yml` file instead.
 ```bash
 # This file may be used to create an environment using:
 # $ conda env create --name <env> --file <this file>
@@ -74,14 +70,25 @@ dependencies:
   - scipy
   - matplotlib
   - pandas
+  - r-base
 
   - pip:
+    - flask
+    - flask_cors
+    - flask_restful
+    - markdown
     - msgpack
+    - python-dotenv
     - pyzmq
     - pygame
+    - pyproj    # birdhouse dep
     - pyqtwebengine
     - pyopengl
     - pyopengl-accelerate
+    - psutil==5.5.*
+    - pytest==4.1.*
+    - pylint==2.2.*
+    - pylint-exit==1.0.*
 ```
 
 ```bash
