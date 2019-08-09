@@ -1,12 +1,16 @@
-As mentioned previously ..
+As mentioned previously the dependency flow is quite important and as such one
+needs to have Bluesky running before Bluebird can operate. Furthermore Twitcher
+and DoDo require Bluebird to be running in order for them to work. Therefore, to
+get things up and running, the installation is advised to be done sequentially
+as laid out in the sections below
 
 ![](img/simurgh-deps.png)
 
 ## Bluesky
 
-Original instructions can be found on:
+Original instructions can be found at [TUDelft-CNS-ATM/bluesky wiki](https://github.com/TUDelft-CNS-ATM/bluesky/wiki)
 
-However, it has been found to be much easier to have `environment.yml` file instead.
+However, it has been found to be much easier to have a single conda `environment.yml` file instead
 ```bash
 # This file may be used to create an environment using:
 # $ conda env create --name <env> --file <this file>
@@ -44,11 +48,13 @@ dependencies:
     - pylint-exit==1.0.*
 ```
 
+In the `simurgh/` directory, one can create the desired conda environment with
+the commands below:
 ```bash
 conda env create -q && conda activate nats
 ```
 
-Now that dependencies are install for both Bluesky & Bluebird, we can at least
+Now that dependencies are installed for both Bluesky & Bluebird, we can at least
 check that these are OK by running `check.py` inside the Bluesky repository.
 
 Running `python bluesky/check.py `will produce the following output:
@@ -94,7 +100,7 @@ launched with:
 (nats) $$ cd bluesky && python Bluesky.py
 ```
 
-The above command will start the Bluesky simulator with the in built GUI which
+The above command will start the Bluesky simulator with the default GUI which
 looks like:
 
 ![](img/redsky-gui.png)
@@ -121,7 +127,7 @@ between the simulator and the AI agents.
 
 ## Bluebird
 
-If Bluesky was install successfully, then it should be as simply as doing:
+If Bluesky was installed successfully, then it should be as simple as running:
 ```bash
 (nats) $$ cd bluebird && python run.py
 ```
@@ -142,21 +148,21 @@ Client active node changed.
 
 ```
 
-Now we have the simulator running, and the interface that sits on top, we can
+Now we have the simulator running, and the interface that sits on top up and running, we can
 now connect our AI agents.
 
 ## DoDo
 
 ![](img/dodo-bird.png)
 
-Here
+Assuming one has cloned `simurgh` along with all submodules, it should be the
+case one can then install `Pydodo` with:
 
 ```bash
-git clone https://github.com/alan-turing-institute/dodo.git
 cd dodo/Pydodo
 pip install .
 ```
-
+Then to check if this worked:
 ```python
 >>> import pydodo
 >>>
@@ -164,13 +170,12 @@ pip install .
 True
 >>>
 ```
-Success!
+_Success!_
 
 ## Birdhouse
 
-Birdhouse required Bluesky and Bluebird to both be running in order to get
+Birdhouse requires Bluesky and Bluebird to both be running in order to get
 working.
-
 
 ```bash
 >>> import pydodo
@@ -185,4 +190,3 @@ python run.py default_input_agents_read_scn.ini
 ```
 
 ## Twitcher (Optional)
-

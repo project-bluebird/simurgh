@@ -1,6 +1,7 @@
 # Welcome to Simurgh
 
-*Simugh* pronounced _Seymour_ is a project that aims to develop a research-focused
+[*Simugh*](https://en.wikipedia.org/wiki/Simurgh) pronounced _Seymour_ is a project
+that aims to develop a research-focused
 open source simulation platform, along with a user-friendly interface for
 evaluating different machine learning algorithms for real-time decision-making,
 from optimisation approaches to reinforcement learning, in a complex and
@@ -16,8 +17,9 @@ platform to evaluate possible machine learning approaches to this task, and
 explores algorithms to 'play' the simulation in the role of air traffic
 controllers.
 
-The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project contains several
-elements that all work together to achieve the aims laid out above; these are:
+The [Simurgh
+project](https://www.turing.ac.uk/research/research-projects/decision-making-under-uncertainty-air-traffic-control)
+contains several elements that all work together to achieve the aims laid out above; these are:
 
 - [Bluesky](https://github.com/alan-turing-institute/bluesky) - open source air traffic simulator
 
@@ -34,16 +36,18 @@ dependencies tree of the packages outlined above.
 
 ![](img/simurgh-deps.png)
 
-A full step-by-step installation guide can be found at: `www.placeholder-website-name.com>`.
+A full step-by-step installation guide can be found [here](https://alan-turing-institute.github.io/simurgh/install) at the installation page:
 
 However, if one would like to get up and running immediately this set of
 commands will install all dependencies and start the application using Docker by
 running:
 
 ```bash
+git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
 source install.sh
 ```
 
-This will create a conda environment call `nats` and install all necessary
-dependencies required. Please see User Guide for how to get going.
+> TODO :: Add Docker instructions
 
+This will create a conda environment call `nats` and install all necessary
+dependencies required.
