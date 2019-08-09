@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Installation - simurgh</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Installation";
+    var mkdocs_page_input_path = "install.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> simurgh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Installation</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#bluesky">Bluesky</a></li>
+    
+
+    <li class="toctree-l2"><a href="#bluebird">Bluebird</a></li>
+    
+
+    <li class="toctree-l2"><a href="#dodo">DoDo</a></li>
+    
+
+    <li class="toctree-l2"><a href="#birdhouse">Birdhouse</a></li>
+    
+
+    <li class="toctree-l2"><a href="#twitcher-optional">Twitcher (Optional)</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../user-guide/getting-started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../user-guide/getting-started-II/">Getting Started Part Deux</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../troubleshooting/">Troubleshooting</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../releases/">Releases</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">simurgh</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Installation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/alan-turing-institute/nats/edit/master/docs/install.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>As mentioned previously ..</p>
+<p><img alt="" src="../img/simurgh-deps.png" /></p>
+<h2 id="bluesky">Bluesky</h2>
+<p>Original instructions can be found on:</p>
+<p>However, it has been found to be much easier to have <code>environment.yml</code> file instead.</p>
+<pre><code class="bash"># This file may be used to create an environment using:
+# $ conda env create --name &lt;env&gt; --file &lt;this file&gt;
+# platform: linux-64
+name: nats
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.6
+  - pyqt
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - r-base
+
+  - pip:
+    - flask
+    - flask_cors
+    - flask_restful
+    - markdown
+    - msgpack
+    - python-dotenv
+    - pyzmq
+    - pygame
+    - pyproj    # birdhouse dep
+    - pyqtwebengine
+    - pyopengl
+    - pyopengl-accelerate
+    - psutil==5.5.*
+    - pytest==4.1.*
+    - pylint==2.2.*
+    - pylint-exit==1.0.*
+</code></pre>
+
+<pre><code class="bash">conda env create -q &amp;&amp; conda activate nats
+</code></pre>
+
+<p>Now that dependencies are install for both Bluesky &amp; Bluebird, we can at least
+check that these are OK by running <code>check.py</code> inside the Bluesky repository.</p>
+<p>Running <code>python bluesky/check.py</code>will produce the following output:</p>
+<pre><code class="bash">(nats) $$ python bluesky/check.py
+This script checks the availability of the libraries required by BlueSky, and
+the capabilities of your system.
+
+Checking for numpy               [OK]
+Checking for scipy               [OK]
+Checking for matplotlib          [OK]
+Checking for pyqt                [QT5]
+Checking for pyopengl            [OK]
+OpenGL module version is         [3.1.0]
+Checking GL capabilities         [OK]
+GL Version at least 3.3          [OK]
+Supported GL version             [4.1]
+Checking for pygame              pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[OK]
+
+You have all the required libraries to run BlueSky. You can use both the QTGL
+and the pygame versions.
+Checking bluesky modules
+StateBasedCD: using Python version.
+Could not import pyclipper, RESO SSD will not function
+Using Open Aircraft Performance (OpenAP) model
+Successfully loaded all BlueSky modules. Start BlueSky by running BlueSky.py.
+
+</code></pre>
+
+<p>The above command only checks the dependencies for Bluesky, if it was indeed
+successful, we can now install Bluesky into the Python path with:</p>
+<pre><code class="bash">(nats) $$ pip install bluesky/
+</code></pre>
+
+<p>From here, all the necessary items should be installed, Bluesky can now be
+launched with:</p>
+<pre><code class="bash">(nats) $$ cd bluesky &amp;&amp; python Bluesky.py
+</code></pre>
+
+<p>The above command will start the Bluesky simulator with the in built GUI which
+looks like:</p>
+<p><img alt="" src="../img/redsky-gui.png" /></p>
+<p>If one would like to run Bluesky <em>without</em> the default GUI, a headless version
+is available with the command:</p>
+<pre><code class="bash">(nats) $$ cd bluesky &amp;&amp; python Bluesky.py --headless
+</code></pre>
+
+<p>If perhaps the user wished to connect the running instance to a remote host this
+can be done with:</p>
+<pre><code class="bash">(nats) $$ cd bluesky &amp;&amp; python BlueSky.py --client --bluesky_host=1.2.3.4
+</code></pre>
+
+<p>This will skip discovery and attempt a connection to the specified host (using
+the default ports)</p>
+<p>Now that the instance of the simulator is up and running and connected to the
+desired ports, one can now spin up Bluebird, which is the interface layer
+between the simulator and the AI agents.</p>
+<h2 id="bluebird">Bluebird</h2>
+<p>If Bluesky was install successfully, then it should be as simply as doing:</p>
+<pre><code class="bash">(nats) $$ cd bluebird &amp;&amp; python run.py
+</code></pre>
+
+<p>This should produce the following output:</p>
+<pre><code class="bash">2019-08-08 18:08:31 INFO     bluebird.bluebird: Connecting to client...
+Client 0b06b30f connected to host 5dd3f7f1 of version 1.2.1
+2019-08-08 18:08:41 INFO     bluebird.cache.sim_state: speed=0x, ticks=   0, time=, state=INIT, aircraft=0
+2019-08-08 18:08:41 INFO     bluebird.cache.sim_state: Logging started. Initial SIM_LOG_RATE=0.2
+Client active node changed.
+ * Serving Flask app &quot;bluebird.api&quot; (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+2019-08-08 18:08:46 INFO     bluebird.cache.sim_state: speed=0.0x, ticks=   0, time=00:00:00, state=INIT, aircraft=0
+
+</code></pre>
+
+<p>Now we have the simulator running, and the interface that sits on top, we can
+now connect our AI agents.</p>
+<h2 id="dodo">DoDo</h2>
+<p><img alt="" src="../img/dodo-bird.png" /></p>
+<p>Here</p>
+<pre><code class="bash">git clone https://github.com/alan-turing-institute/dodo.git
+cd dodo/Pydodo
+pip install .
+</code></pre>
+
+<pre><code class="python">&gt;&gt;&gt; import pydodo
+&gt;&gt;&gt;
+&gt;&gt;&gt; pydodo.reset_simulation()
+True
+&gt;&gt;&gt;
+</code></pre>
+
+<p>Success!</p>
+<h2 id="birdhouse">Birdhouse</h2>
+<p>Birdhouse required Bluesky and Bluebird to both be running in order to get
+working.</p>
+<pre><code class="bash">&gt;&gt;&gt; import pydodo
+&gt;&gt;&gt; pydodo.all_positions()
+Empty DataFrame
+Columns: [altitude, ground_speed, latitude, longitude, vertical_speed]
+Index: []
+</code></pre>
+
+<pre><code class="bash">python run.py default_input_agents_read_scn.ini
+</code></pre>
+
+<h2 id="twitcher-optional">Twitcher (Optional)</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../user-guide/getting-started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/alan-turing-institute/nats/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../user-guide/getting-started/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

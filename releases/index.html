@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Releases - simurgh</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Releases";
+    var mkdocs_page_input_path = "releases.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> simurgh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../install/">Installation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../user-guide/getting-started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../user-guide/getting-started-II/">Getting Started Part Deux</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../testing/">Testing</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../troubleshooting/">Troubleshooting</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Releases</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#project-layout">Project layout</a></li>
+    
+
+    <li class="toctree-l2"><a href="#bluesky">Bluesky</a></li>
+    
+
+    <li class="toctree-l2"><a href="#documentation">Documentation</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">simurgh</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Releases</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/alan-turing-institute/nats/edit/master/docs/releases.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is a note</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a tip</p>
+</div>
+<div class="admonition important">
+<p>This is an admonition box without a title.</p>
+</div>
+<div class="admonition caution">
+<p>This is the example for <strong>Caution</strong> admonition.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This is the example for <strong>Caution</strong> admonition.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On a few known hosts (specifically GitHub, Bitbucket and GitLab), the
+<code>edit_uri</code> is derived from the 'repo_url' and does not need to be set
+manually. Simply defining a <code>repo_url</code> will automatically populate the
+<code>edit_uri</code> configs setting.</p>
+<p>For example, for a GitHub- or GitLab-hosted repository, the <code>edit_uri</code>
+would be automatically set as <code>edit/master/docs/</code> (Note the <code>edit</code> path
+and <code>master</code> branch).</p>
+<p>For a Bitbucket-hosted repository, the equivalent <code>edit_uri</code> would be
+automatically set as <code>src/default/docs/</code> (note the <code>src</code> path and <code>default</code>
+branch).</p>
+<p>To use a different URI than the default (for example a different branch),
+simply set the <code>edit_uri</code> to your desired string. If you do not want any
+"edit URL link" displayed on your pages, then set <code>edit_uri</code> to an empty
+string to disable the automatic setting.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On GitHub and GitLab, the default "edit" path (<code>edit/master/docs/</code>) opens
+the page in the online editor. This functionality requires that the user
+have and be logged in to a GitHub/GitLab account. Otherwise, the
+user will
+be redirected to a login/signup page. Alternatively, use the
+"blob" path
+(<code>blob/master/docs/</code>) to open a read-only view, which
+supports anonymous
+access.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+</div>
+<p>??? note "Phasellus posuere in sem ut cursus"
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus
+    auctor
+    massa, nec semper lorem quam in massa.</p>
+<p>$$
+\frac{n!}{k!(n-k)!} = \binom{n}{k}
+$$</p>
+<pre><code class="python">def somefunction():
+    pass
+</code></pre>
+
+<p>Inline code <code>some = "thing"</code></p>
+<h2 id="bluesky">Bluesky</h2>
+<p>Original instructions state:</p>
+<pre><code class="bash">conda install pyqt numpy scipy matplotlib pandas
+
+pip install msgpack pyzmq pygame pyqtwebengine
+</code></pre>
+
+<p>Found it easier to have <code>environment.yml</code> file instead.</p>
+<pre><code class="bash"># This file may be used to create an environment using:
+# $ conda env create --name &lt;env&gt; --file &lt;this file&gt;
+# platform: linux-64
+name: nats
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.6
+  - pyqt
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+
+  - pip:
+    - msgpack
+    - pyzmq
+    - pygame
+    - pyqtwebengine
+    - pyopengl
+    - pyopengl-accelerate
+</code></pre>
+
+<pre><code class="bash">conda env create -q &amp;&amp; conda activate nats
+</code></pre>
+
+<p>Now that dependencies are install for both Bluesky &amp; Bluebird, we can at least
+check that these are OK by running <code>check.py</code> inside the Bluesky repository.</p>
+<p>Running <code>python bluesky/check.py</code>will produce the following output:</p>
+<pre><code class="bash">(nats) $$ python bluesky/check.py
+This script checks the availability of the libraries required by BlueSky, and
+the capabilities of your system.
+
+Checking for numpy               [OK]
+Checking for scipy               [OK]
+Checking for matplotlib          [OK]
+Checking for pyqt                [QT5]
+Checking for pyopengl            [OK]
+OpenGL module version is         [3.1.0]
+Checking GL capabilities         [OK]
+GL Version at least 3.3          [OK]
+Supported GL version             [4.1]
+Checking for pygame              pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[OK]
+
+You have all the required libraries to run BlueSky. You can use both the QTGL
+and the pygame versions.
+Checking bluesky modules
+StateBasedCD: using Python version.
+Could not import pyclipper, RESO SSD will not function
+Using Open Aircraft Performance (OpenAP) model
+Successfully loaded all BlueSky modules. Start BlueSky by running BlueSky.py.
+
+</code></pre>
+
+<p>The above command only checks the dependencies for Bluesky, if it was indeed
+successful, we can now install Bluesky into the Python path with:</p>
+<pre><code class="bash">(nats) $$ python setup.py install
+</code></pre>
+
+<p>From here, all the necessary items should be installed, Bluesky can now be
+launched with:</p>
+<pre><code class="bash">(nats) $$ python bluesky/Bluesky.py
+
+</code></pre>
+
+<h2 id="documentation">Documentation</h2>
+<p>The documentation for this project can be found at <code>&lt;www.placeholder-website-name.com&gt;</code>.
+Alternatively one can build and view these locally if one has <code>mkdocs</code>
+installed. To do this, in the top level of this repository, run:</p>
+<pre><code class="bash">mkdocs serve
+</code></pre>
+
+<p>The corresponding <em>readthedocs</em> can be found on <code>localhost:8000</code></p>
+<p>NOTE. If files are removed from 'docs/' in between builds, they make
+still hang around, a better command to run would be:</p>
+<pre><code class="bash">mkdocs build --clean
+</code></pre>
+
+<p>followed by <code>mkdocs serve</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../troubleshooting/" class="btn btn-neutral" title="Troubleshooting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/alan-turing-institute/nats/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../troubleshooting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
