@@ -1,0 +1,29 @@
+# safelist
+branches:
+  only:
+  - "master"
+  - "develop"
+  - "issue/2/ci-testing"
+before_install:
+  - "sed -i \"s|https://github.com/alan-turing-institute/nats-birdhouse.git|https://tallamjr:$GITHUB_ACCESS_TOKEN@github.com/alan-turing-institute/nats-birdhouse.git|\" .gitmodules"
+  - "git submodule update --init --recursive"
+  - "echo -e 'machine github.com\n  login $GITHUB_ACCESS_TOKEN' > ~/.netrc"
+  - "echo $PWD"
+  - "git pull --all"
+git:
+  submodules: false
+install:
+  - "sudo apt-get update"
+  - "if [[ \"$TRAVIS_PYTHON_VERSION\" == \"2.7\" ]]; then wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh; else wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi"
+  - "bash miniconda.sh -b -p $HOME/miniconda"
+  - "export PATH=\"$HOME/miniconda/bin:$PATH\""
+  - "hash -r"
+  - "conda config --set always_yes yes --set changeps1 no"
+  - "conda update -q conda"
+  - "conda info -a"
+  - "source install.sh"
+# language: python
+# python:
+#   - "3.6"
+script:
+  - "pytest -n auto -vs dodo/PyDodo/tests/"
