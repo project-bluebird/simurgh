@@ -208,6 +208,22 @@ Success!
 
 ## Birdhouse
 
+Birdhouse required Bluesky and Bluebird to both be running in order to get
+working.
+
+
+```bash
+>>> import pydodo
+>>> pydodo.all_positions()
+Empty DataFrame
+Columns: [altitude, ground_speed, latitude, longitude, vertical_speed]
+Index: []
+```
+
+```bash
+python run.py default_input_agents_read_scn.ini
+```
+
 ## Twitcher (Optional)
 
 ## Documentation
