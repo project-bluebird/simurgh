@@ -142,11 +142,15 @@
           <div role="main">
             <div class="section">
               
-                <p>As mentioned previously ..</p>
+                <p>As mentioned previously the dependency flow is quite important and as such one
+needs to have Bluesky running before Bluebird can operate. Furthermore Twitcher
+and DoDo require Bluebird to be running in order for them to work. Therefore, to
+get things up and running, the installation is advised to be done sequentially
+as laid out in the sections below</p>
 <p><img alt="" src="../img/simurgh-deps.png" /></p>
 <h2 id="bluesky">Bluesky</h2>
-<p>Original instructions can be found on:</p>
-<p>However, it has been found to be much easier to have <code>environment.yml</code> file instead.</p>
+<p>Original instructions can be found at <a href="https://github.com/TUDelft-CNS-ATM/bluesky/wiki">TUDelft-CNS-ATM/bluesky wiki</a></p>
+<p>However, it has been found to be much easier to have a single conda <code>environment.yml</code> file instead</p>
 <pre><code class="bash"># This file may be used to create an environment using:
 # $ conda env create --name &lt;env&gt; --file &lt;this file&gt;
 # platform: linux-64
@@ -183,10 +187,12 @@ dependencies:
     - pylint-exit==1.0.*
 </code></pre>
 
+<p>In the <code>simurgh/</code> directory, one can create the desired conda environment with
+the commands below:</p>
 <pre><code class="bash">conda env create -q &amp;&amp; conda activate nats
 </code></pre>
 
-<p>Now that dependencies are install for both Bluesky &amp; Bluebird, we can at least
+<p>Now that dependencies are installed for both Bluesky &amp; Bluebird, we can at least
 check that these are OK by running <code>check.py</code> inside the Bluesky repository.</p>
 <p>Running <code>python bluesky/check.py</code>will produce the following output:</p>
 <pre><code class="bash">(nats) $$ python bluesky/check.py
@@ -226,7 +232,7 @@ launched with:</p>
 <pre><code class="bash">(nats) $$ cd bluesky &amp;&amp; python Bluesky.py
 </code></pre>
 
-<p>The above command will start the Bluesky simulator with the in built GUI which
+<p>The above command will start the Bluesky simulator with the default GUI which
 looks like:</p>
 <p><img alt="" src="../img/redsky-gui.png" /></p>
 <p>If one would like to run Bluesky <em>without</em> the default GUI, a headless version
@@ -245,7 +251,7 @@ the default ports)</p>
 desired ports, one can now spin up Bluebird, which is the interface layer
 between the simulator and the AI agents.</p>
 <h2 id="bluebird">Bluebird</h2>
-<p>If Bluesky was install successfully, then it should be as simply as doing:</p>
+<p>If Bluesky was installed successfully, then it should be as simple as running:</p>
 <pre><code class="bash">(nats) $$ cd bluebird &amp;&amp; python run.py
 </code></pre>
 
@@ -265,16 +271,17 @@ Client active node changed.
 
 </code></pre>
 
-<p>Now we have the simulator running, and the interface that sits on top, we can
+<p>Now we have the simulator running, and the interface that sits on top up and running, we can
 now connect our AI agents.</p>
 <h2 id="dodo">DoDo</h2>
 <p><img alt="" src="../img/dodo-bird.png" /></p>
-<p>Here</p>
-<pre><code class="bash">git clone https://github.com/alan-turing-institute/dodo.git
-cd dodo/Pydodo
+<p>Assuming one has cloned <code>simurgh</code> along with all submodules, it should be the
+case one can then install <code>Pydodo</code> with:</p>
+<pre><code class="bash">cd dodo/Pydodo
 pip install .
 </code></pre>
 
+<p>Then to check if this worked:</p>
 <pre><code class="python">&gt;&gt;&gt; import pydodo
 &gt;&gt;&gt;
 &gt;&gt;&gt; pydodo.reset_simulation()
@@ -282,9 +289,9 @@ True
 &gt;&gt;&gt;
 </code></pre>
 
-<p>Success!</p>
+<p><em>Success!</em></p>
 <h2 id="birdhouse">Birdhouse</h2>
-<p>Birdhouse required Bluesky and Bluebird to both be running in order to get
+<p>Birdhouse requires Bluesky and Bluebird to both be running in order to get
 working.</p>
 <pre><code class="bash">&gt;&gt;&gt; import pydodo
 &gt;&gt;&gt; pydodo.all_positions()

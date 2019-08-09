@@ -131,7 +131,8 @@
             <div class="section">
               
                 <h1 id="welcome-to-simurgh">Welcome to Simurgh</h1>
-<p><em>Simugh</em> pronounced <em>Seymour</em> is a project that aims to develop a research-focused
+<p><a href="https://en.wikipedia.org/wiki/Simurgh"><em>Simugh</em></a> pronounced <em>Seymour</em> is a project
+that aims to develop a research-focused
 open source simulation platform, along with a user-friendly interface for
 evaluating different machine learning algorithms for real-time decision-making,
 from optimisation approaches to reinforcement learning, in a complex and
@@ -145,8 +146,9 @@ for actual air traffic controllers, the project builds an open experimentation
 platform to evaluate possible machine learning approaches to this task, and
 explores algorithms to 'play' the simulation in the role of air traffic
 controllers.</p>
-<p>The <a href="https://en.wikipedia.org/wiki/Simurgh">Simurgh</a> project contains several
-elements that all work together to achieve the aims laid out above; these are:</p>
+<p>The <a href="https://www.turing.ac.uk/research/research-projects/decision-making-under-uncertainty-air-traffic-control">Simurgh
+project</a>
+contains several elements that all work together to achieve the aims laid out above; these are:</p>
 <ul>
 <li>
 <p><a href="https://github.com/alan-turing-institute/bluesky">Bluesky</a> - open source air traffic simulator</p>
@@ -167,15 +169,19 @@ elements that all work together to achieve the aims laid out above; these are:</
 <p>In order to get things up and running, it is important to emphasise the
 dependencies tree of the packages outlined above.</p>
 <p><img alt="" src="img/simurgh-deps.png" /></p>
-<p>A full step-by-step installation guide can be found at: <code>www.placeholder-website-name.com&gt;</code>.</p>
+<p>A full step-by-step installation guide can be found <a href="https://alan-turing-institute.github.io/simurgh/install">here</a> at the installation page:</p>
 <p>However, if one would like to get up and running immediately this set of
 commands will install all dependencies and start the application using Docker by
 running:</p>
-<pre><code class="bash">source install.sh
+<pre><code class="bash">git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
+source install.sh
 </code></pre>
 
+<blockquote>
+<p>TODO :: Add Docker instructions</p>
+</blockquote>
 <p>This will create a conda environment call <code>nats</code> and install all necessary
-dependencies required. Please see User Guide for how to get going.</p>
+dependencies required.</p>
               
             </div>
           </div>
@@ -227,5 +233,5 @@ dependencies required. Please see User Guide for how to get going.</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-08-09 14:34:45
+Build Date UTC : 2019-08-09 15:42:54
 -->
