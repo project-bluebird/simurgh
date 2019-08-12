@@ -41,6 +41,4 @@ script:
   - "cd dodo/PyDodo/ && pytest -vs tests/ && cd -"
 
 after_success:
-  - "test $TRAVIS_BRANCH = \"master\" && echo 'success!'"
-  - "pip install mkdocs"
-  - "mkdocs build --clean"
+  - "test $TRAVIS_BRANCH = \"master\" && pip install mkdocs && mkdocs build --clean && mkdocs gh-deploy"
