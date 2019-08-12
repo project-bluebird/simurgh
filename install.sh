@@ -56,7 +56,7 @@ fi
 
 DODO_DIR=./dodo/
 
-( cd $DODO_DIR; pip install Pydodo/ )
+( cd $DODO_DIR; pip install PyDodo/ )
 
 
 
