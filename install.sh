@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ `uname` == "Linux" ]; then
+    # Export path variables for linux
+    # Resolves: 'xcb' plugin for OpenGL could not be found
+    # https://github.com/TUDelft-CNS-ATM/bluesky/wiki/Installation
+    export QT_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/
+fi
+
 ## Set up environment and install dependecies
 
 if [ -e "environment.yml" ]; then
