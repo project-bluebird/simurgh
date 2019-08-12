@@ -4,17 +4,13 @@ branches:
   - "master"
   - "develop"
   - "issue/2/ci-testing"
-env:
-  matrix:
-    secure: qXF1ejqcf0e556MTJi/lhm0bbzhJHVTSWmjMxGcbOKPF4vUqMqnGOgDxB7VE3fNPSrHrrhiTybMMfbcqTK/I8GGkFpswngiilJ+iCxS8d6AzIszVM+CSa5i+qwLcI9lAy9kQFSwJFhc0uaoG5Wr8LL9NHNVbvasmG4l3CUTdabq6KZmqm3pb6+pcn+NaYtF3nMbxAqXYstWlUOTWcrlAEwRE8l/btP903A8LJhFQOXQdxnIKRevBAO38CpAnF2GOirO4WtvgWGmiEE20BMrfrRCwtDteDWqqLmuQfP+2Wjrg3qzz0bjP7/DDKr1sVP/ATEZBIfBA54SUX3VgWG8VSQzVfjHxto70vEDFJB7xA+78xjIbU8kZF26X5pe9SRf1gC6Z9gQVvGbu5E/zKyQRXR+al7iNwYr1NPjqXn1kDeIzB9h19G5h09AUJ/lRqJcIlzRGZMarEWu+1wl1jVZeYj1X0qLfxMk1V+5Y4qmjcOe0aJ1l8HjegjXchoNps5vbRs9fh/8+heEddQHktQEqt7LWwT7YDlyR2IBJFQCNliNTlqg6snawIohHU5oVei/kR8UUWE2eXhVn/xwRdECycIshYp/CO9KAsbobg581+TM/NlY3ZAMQxFlo5/cBYZNtxBsfbIaC2tO2YrICUMANnHlH4qbc53CKIfQdCQVed0U=
-before_install:
-  - "sed -i \"s|https://github.com/alan-turing-institute/nats-birdhouse.git|https://tallamjr:$CI_ACCESS_TOKEN@github.com/alan-turing-institute/nats-birdhouse.git|\" .gitmodules"
-  - "git submodule update --init --recursive"
-  - "echo -e 'machine github.com\n  login $CI_ACCESS_TOKEN' > ~/.netrc"
-  - "echo $PWD"
-  - "git pull --all"
 git:
   submodules: false
+before_install:
+  - "git submodule update --init --recursive"
+  - "echo -e 'machine github.com\n  login $BIRDHOUSE_TOKEN' > ~/.netrc"
+  - "echo $PWD"
+  - "git pull --all"
 install:
   - "sudo apt-get update"
   - "if [[ \"$TRAVIS_PYTHON_VERSION\" == \"2.7\" ]]; then wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh; else wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi"

@@ -1,6 +1,3 @@
-[submodule "birdhouse"]
-	path = birdhouse
-	url = git@github.com:alan-turing-institute/nats-birdhouse.git
 [submodule "dodo"]
 	path = dodo
 	url = git@github.com:alan-turing-institute/dodo.git
