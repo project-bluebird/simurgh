@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/alan-turing-institute/simurgh.svg?branch=master)](https://travis-ci.com/alan-turing-institute/simurgh)
+
 # Simurgh
 
 *Simugh* pronounced _Seymour_ is a project that aims to develop a research-focused
