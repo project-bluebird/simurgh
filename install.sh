@@ -1,18 +1,12 @@
 #!/bin/bash
 
-if [ `uname` == "Linux" ]; then
-    # Export path variables for linux
-    # Resolves: 'xcb' plugin for OpenGL could not be found
-    # https://github.com/TUDelft-CNS-ATM/bluesky/wiki/Installation
-    export QT_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/
-fi
-
 ## Set up environment and install dependecies
 
 if [ -e "environment.yml" ]; then
   # echo "environment.yml file found"
   # Get environment name associated with 'name' variable in file
   ENV=`grep 'name:' environment.yml | tail -n1 | awk '{ print $2}'`
+
 
   # Check if you are already in the environment
   if [[ $PATH != *$ENV* ]]; then
@@ -26,7 +20,17 @@ if [ -e "environment.yml" ]; then
       echo "Creating '$ENV' environment now .. "
 
       conda env create -q;
+
+      if [ `uname` == "Linux" ]; then
+        # Export path variables for linux
+        # Resolves: 'xcb' plugin for OpenGL could not be found
+        # https://github.com/TUDelft-CNS-ATM/bluesky/wiki/Installation
+        export QT_PLUGIN_PATH="$HOME/miniconda/envs/$ENV/lib/python3.6/site-packages/PyQt5/Qt/plugins/platforms/"
+        echo $QT_PLUGIN_PATH
+      fi
+
       conda activate $ENV;
+
     fi
   fi
 fi
