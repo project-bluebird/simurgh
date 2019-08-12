@@ -12,9 +12,14 @@ git:
 before_install:
   - "sudo add-apt-repository ppa:beineri/opt-qt593-trusty -y"
   - "sudo apt-get update -qq"
+  - "sudo apt-get install libx11-xcb1"
   - "git submodule update --init --recursive"
   - "echo $PWD"
   - "git pull --all"
+addons:
+  apt:
+    packages:
+      - "libxkbcommon-x11-0"
 install:
   - "sudo apt-get update"
   - "sudo apt-get -y install qt59base libgl1-mesa-dev"
@@ -27,6 +32,7 @@ install:
   - "conda update -q conda"
   - "conda info -a"
   - "source $HOME/miniconda/etc/profile.d/conda.sh"
+  - "export QT_QPA_PLATFORM='offscreen'"
   - "source install.sh"
 # language: python
 # python:
