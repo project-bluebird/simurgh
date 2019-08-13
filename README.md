@@ -43,7 +43,8 @@ git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.
 
 ![](./docs/img/simurgh-deps.png)
 
-A full step-by-step installation guide can be found at: `www.placeholder-website-name.com>`.
+A full step-by-step installation guide can be found
+at:https://alan-turing-institute.github.io/simurgh/
 
 However, if one would like to get up and running immediately this set of
 commands will install all dependencies and start the application using Docker by
@@ -277,7 +278,7 @@ Client active node changed.
 
 ## Documentation
 
-The documentation for this project can be found at `<www.placeholder-website-name.com>`.
+The documentation for this project can be found at https://alan-turing-institute.github.io/simurgh/
 Alternatively one can build and view these locally if one has `mkdocs`
 installed. To do this, in the top level of this repository, run:
 

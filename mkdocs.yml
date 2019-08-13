@@ -18,7 +18,7 @@ theme:
     hljs_languages:
         - yaml
 
-repo_url: https://github.com/alan-turing-institute/nats
+repo_url: https://github.com/alan-turing-institute/simurgh
 
 markdown_extensions:
     - toc:
