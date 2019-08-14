@@ -31,23 +31,43 @@ contains several elements that all work together to achieve the aims laid out ab
 
 - [NATS birdhouse](https://github.com/alan-turing-institute/nats-birdhouse) - some ATC agents (currently in Python)
 
+![](img/simurgh-deps.png)
+
+## Quick Start
+
 In order to get things up and running, it is important to emphasise the
 dependencies tree of the packages outlined above.
 
-![](img/simurgh-deps.png)
-
-A full step-by-step installation guide can be found [here](https://alan-turing-institute.github.io/simurgh/install) at the installation page:
-
-However, if one would like to get up and running immediately this set of
-commands will install all dependencies and start the application using Docker by
-running:
+If one has Docker install, perhaps the most "hassle free" option would be to run:
 
 ```bash
-git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
-source install.sh
+$$ docker-compose up -d
 ```
+which will pull down the pre-built images from DockerHub and
+start each container in order. Then all one needs to do is go to
+`http://localhost:8080` where Twitcher will be running.
 
-> TODO :: Add Docker instructions
+_Note_: If this is the first time running this command, it may take some time to
+download and extract all the layers involved.
+
+Then to close this, running:
+
+```bash
+$$ docker-compose down
+```
+will shutdown the running instances.
+
+
+Alternatively, if one would like to get up and running fairly quickly, but
+_without_ Docker, this set of commands will install all dependencies and start the application
+by running:
+
+```bash
+$$ git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
+$$ source install.sh
+```
 
 This will create a conda environment call `nats` and install all necessary
 dependencies required.
+
+A full step-by-step installation guide can be found [here](https://alan-turing-institute.github.io/simurgh/install) at the installation page.
