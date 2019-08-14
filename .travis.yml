@@ -3,7 +3,7 @@ branches:
   only:
   - "master"
   - "develop"
-  - "issue/2/ci-testing"
+  - "issue/1/docker-compose"
 
 os:
   - "linux"
@@ -39,6 +39,9 @@ install:
 
 script:
   - "cd dodo/PyDodo/ && pytest -vs tests/ && cd -"
+  - "docker-compose up -d"
+  - "sleep 10"
+  - "docker-compose down"
 
 after_success:
   - "test $TRAVIS_BRANCH = \"master\" && pip install mkdocs && mkdocs build --clean && mkdocs gh-deploy"
