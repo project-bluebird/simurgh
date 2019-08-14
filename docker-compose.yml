@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  bluesky:
+    container_name: bluesky
+    image: turinginst/bluesky:1.1.1
+    expose:
+      - 9000
+      - 9001
+  bluebird:
+    container_name: bluebird
+    depends_on:
+      - bluesky
+    image: turinginst/bluebird:1.2.0
+    ports:
+      - 5001:5001
+    environment:
+      - BS_HOST=bluesky
+  web:
+    container_name: twitcher
+    depends_on:
+      - bluebird
+    image: tallamjr/twitcher
+    command: http-server .
+    ports:
+      - "8080:8080"
