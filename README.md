@@ -31,6 +31,20 @@ elements that all work together to achieve the aims laid out above; these are:
 
 - [NATS birdhouse](https://github.com/alan-turing-institute/nats-birdhouse) - some ATC agents (currently in Python)
 
+## Quick Start
+
+If one has Docker install, perhaps the most "hassle free" option would be to run
+`docker-compose up -d` which will pull down the pre-built images from DockerHub and
+start each container in order. Then all one needs to do is go to
+`http://localhost:8080` where Twitcher will be running.
+
+_Note_: If this is the first time running this command, it may take some time to
+download and extract all the layers involved.
+
+Then to close this, running `docker-compose down` will shutdown the running
+instances.
+
+
 # Installation
 
 In order to get things up and running, it is important to emphasise the
