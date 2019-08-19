@@ -41,6 +41,8 @@ script:
   - "cd dodo/PyDodo/ && pytest -vs tests/ && cd -"
   # Test docker on Linux only as docker not yet supported on macOS within travis
   - "if [ \"$TRAVIS_OS_NAME\" = \"linux\" ]; then docker-compose up -d; sleep 10; docker-compose down; fi"
+  # Run full integration tests
+  - "if [ \"$TRAVIS_OS_NAME\" = \"linux\" ]; then docker-compose up -d; cd dodo/PyDodo/ && pytest -vs tests/ && cd - ; docker-compose down; fi"
 
 after_success:
   - "test $TRAVIS_BRANCH = \"master\" && pip install mkdocs && mkdocs build --clean && mkdocs gh-deploy"
