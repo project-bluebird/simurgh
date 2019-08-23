@@ -24,6 +24,7 @@ before_install:
   - "echo $PWD"
   - "git pull --all"
   - "export SIMURGH_HOME=$PWD"
+  - "export DODO_HOME=$SIMURGH_HOME/dodo"
 
 install:
   - "bash miniconda.sh -b -p $HOME/miniconda"
