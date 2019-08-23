@@ -23,7 +23,7 @@ before_install:
   - "if [ \"$TRAVIS_OS_NAME\" = \"osx\" ]; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh; fi"
   - "echo $PWD"
   - "git pull --all"
-  - "export DODO_HOME=$PWD"
+  - "export SIMURGH_HOME=$PWD"
 
 install:
   - "bash miniconda.sh -b -p $HOME/miniconda"
@@ -34,17 +34,19 @@ install:
   - "conda info -a"
   - "source $HOME/miniconda/etc/profile.d/conda.sh"
   - "export QT_QPA_PLATFORM='offscreen'"
-  - "conda create -n p36 python=3.6"
+  - "source install.sh"
 
 script:
-  - "conda activate p36"
   - "python --version"
-  - "pip install -r $DODO_HOME/PyDodo/requirements.txt"
-  - "bash $DODO_HOME/PyDodo/tests/travis.sh"
+  - "pip install -r $SIMURGH_HOME/dodo/PyDodo/requirements.txt"
+  - "bash $SIMURGH_HOME/dodo/PyDodo/tests/travis.sh"
   - "conda install r-base"
   - "conda install r-essentials"
   - "conda install r-devtools"
   - "conda install r-config"
   - "conda install r-testthat"
   - "conda install -c conda-forge r-future"
-  - "R CMD check --no-build-vignettes --no-manual $DODO_HOME/rdodo"
+  - "R CMD check --no-build-vignettes --no-manual $SIMURGH_HOME/dodo/rdodo"
+
+-after_success:
+-  - "test $TRAVIS_BRANCH = \"master\" && pip install mkdocs && mkdocs build --clean && mkdocs gh-deploy"
