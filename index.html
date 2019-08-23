@@ -56,6 +56,12 @@
             
     <li class="toctree-l2"><a href="#welcome-to-simurgh">Welcome to Simurgh</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#quick-start">Quick Start</a></li>
+        
+        </ul>
+    
 
     </ul>
 	    </li>
@@ -120,7 +126,7 @@
     <li>Home</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/alan-turing-institute/nats/edit/master/docs/index.md"
+        <a href="https://github.com/alan-turing-institute/simurgh/edit/master/docs/index.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -166,22 +172,34 @@ contains several elements that all work together to achieve the aims laid out ab
 <p><a href="https://github.com/alan-turing-institute/nats-birdhouse">NATS birdhouse</a> - some ATC agents (currently in Python)</p>
 </li>
 </ul>
+<p><img alt="" src="img/simurgh-deps.png" /></p>
+<h2 id="quick-start">Quick Start</h2>
 <p>In order to get things up and running, it is important to emphasise the
 dependencies tree of the packages outlined above.</p>
-<p><img alt="" src="img/simurgh-deps.png" /></p>
-<p>A full step-by-step installation guide can be found <a href="https://alan-turing-institute.github.io/simurgh/install">here</a> at the installation page:</p>
-<p>However, if one would like to get up and running immediately this set of
-commands will install all dependencies and start the application using Docker by
-running:</p>
-<pre><code class="bash">git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
-source install.sh
+<p>If one has Docker install, perhaps the most "hassle free" option would be to run:</p>
+<pre><code class="bash">$$ docker-compose up -d
 </code></pre>
 
-<blockquote>
-<p>TODO :: Add Docker instructions</p>
-</blockquote>
+<p>which will pull down the pre-built images from DockerHub and
+start each container in order. Then all one needs to do is go to
+<code>http://localhost:8080</code> where Twitcher will be running.</p>
+<p><em>Note</em>: If this is the first time running this command, it may take some time to
+download and extract all the layers involved.</p>
+<p>Then to close this, running:</p>
+<pre><code class="bash">$$ docker-compose down
+</code></pre>
+
+<p>will shutdown the running instances.</p>
+<p>Alternatively, if one would like to get up and running fairly quickly, but
+<em>without</em> Docker, this set of commands will install all dependencies and start the application
+by running:</p>
+<pre><code class="bash">$$ git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
+$$ source install.sh
+</code></pre>
+
 <p>This will create a conda environment call <code>nats</code> and install all necessary
 dependencies required.</p>
+<p>A full step-by-step installation guide can be found <a href="https://alan-turing-institute.github.io/simurgh/install">here</a> at the installation page.</p>
               
             </div>
           </div>
@@ -215,7 +233,7 @@ dependencies required.</p>
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/alan-turing-institute/nats/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/alan-turing-institute/simurgh/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
       
@@ -233,5 +251,5 @@ dependencies required.</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-08-09 15:42:54
+Build Date UTC : 2019-08-23 19:04:51
 -->
