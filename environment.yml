@@ -12,8 +12,14 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
-  - pandas
+  - pandas>=0.25.0
   - r-base
+  - r-essentials
+  - r-devtools
+  - r-config
+  - r-testthat
+  - r-future
+  - r-irkernel
 
   - pip:
     - flask
