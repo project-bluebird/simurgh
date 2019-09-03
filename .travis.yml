@@ -49,5 +49,5 @@ script:
   - "conda install -c conda-forge r-future"
   - "R CMD check --no-build-vignettes --no-manual $SIMURGH_HOME/dodo/rdodo"
 
--after_success:
--  - "test $TRAVIS_BRANCH = \"master\" && pip install mkdocs && mkdocs build --clean && mkdocs gh-deploy"
+after_success:
+  - "test $TRAVIS_BRANCH = \"master\" && pip install mkdocs && mkdocs build --clean && mkdocs gh-deploy"
