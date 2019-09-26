@@ -40,7 +40,7 @@ install:
 script:
   - "python --version"
   - "pip install -r $SIMURGH_HOME/dodo/PyDodo/requirements.txt"
-  - "bash $SIMURGH_HOME/dodo/PyDodo/tests/travis.sh"
+  - "bash $SIMURGH_HOME/dodo/PyDodo/tests/.travis.sh"
   - "conda install r-base"
   - "conda install r-essentials"
   - "conda install r-devtools"
