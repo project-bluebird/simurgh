@@ -40,3 +40,4 @@ dependencies:
     - pylint-exit==1.0.*
     - pyqt5
     - ruamel_yaml
+    - wget
