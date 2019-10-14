@@ -11,7 +11,7 @@ services:
     container_name: bluebird
     depends_on:
       - bluesky
-    image: turinginst/bluebird:1.3.0-rc
+    image: turinginst/bluebird:1.3.0
     ports:
       - 5001:5001
     environment:
