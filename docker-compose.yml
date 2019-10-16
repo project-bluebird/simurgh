@@ -20,7 +20,7 @@ services:
     container_name: twitcher
     depends_on:
       - bluebird
-    image: turinginst/twitcher:v0.10.15
+    image: turinginst/twitcher:v0.10.15-3-g1cf28bb
     command: http-server .
     ports:
       - "8080:8080"
