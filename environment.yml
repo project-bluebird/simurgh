@@ -25,6 +25,8 @@ dependencies:
     - flask
     - flask_cors
     - flask_restful
+    - geojson
+    - jsonpath-rw-ext
     - markdown
     - msgpack
     - python-dotenv
@@ -40,4 +42,5 @@ dependencies:
     - pylint-exit==1.0.*
     - pyqt5
     - ruamel_yaml
+    - shapely
     - wget
