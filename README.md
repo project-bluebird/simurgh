@@ -29,21 +29,28 @@ elements that all work together to achieve the aims laid out above; these are:
 
 - [Dodo](https://github.com/alan-turing-institute/dodo) - scaffolds for ATC agents in Python, R, and potentially other languages
 
-- [NATS birdhouse](https://github.com/alan-turing-institute/nats-birdhouse) - some ATC agents (currently in Python)
-
 ## Quick Start
 
-If one has Docker install, perhaps the most "hassle free" option would be to run
-`docker-compose up -d` which will pull down the pre-built images from DockerHub and
+If one has Docker installed, perhaps the most "hassle free" option would be to run:
+
+```
+docker-compose up -d
+```
+
+This will pull down the pre-built images from DockerHub and
 start each container in order. Then all one needs to do is go to
 `http://localhost:8080` where Twitcher will be running.
 
 _Note_: If this is the first time running this command, it may take some time to
 download and extract all the layers involved.
 
-Then to close this, running `docker-compose down` will shutdown the running
-instances.
+Then to close this, run:
 
+```
+docker-compose down
+``` 
+
+This will shutdown the running instances.
 
 # Installation
 
@@ -234,24 +241,6 @@ True
 >>>
 ```
 Success!
-
-## Birdhouse
-
-Birdhouse required Bluesky and Bluebird to both be running in order to get
-working.
-
-
-```bash
->>> import pydodo
->>> pydodo.all_positions()
-Empty DataFrame
-Columns: [altitude, ground_speed, latitude, longitude, vertical_speed]
-Index: []
-```
-
-```bash
-python run.py default_input_agents_read_scn.ini
-```
 
 ## Twitcher (Optional)
 
