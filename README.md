@@ -37,7 +37,6 @@ elements that all work together to achieve this:
 
 ## Quick Start
 
-### ??
 
 If one has Docker installed, the most "hassle free" option is to run:
 
@@ -60,10 +59,6 @@ docker-compose down
 
 This will shutdown the running instances.
 
-### DoDo
-
-![](./docs/img/dodo-bird.png)
-
 PyDodo is the Python implementation of Dodo. It is a scaffold for developing
 algorithms.
 
@@ -74,6 +69,7 @@ git clone https://github.com/alan-turing-institute/dodo.git
 cd dodo/Pydodo
 pip install .
 ```
+
 
 If the dockers are running, then one can communicate with the simulator (via
 BlueBird) using pydodo:
