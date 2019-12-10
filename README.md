@@ -2,43 +2,51 @@
 
 # Simurgh
 
-*Simugh* pronounced _Seymour_ is a project that aims to develop a research-focused
-open source simulation platform, along with a user-friendly interface for
-evaluating different machine learning algorithms for real-time decision-making,
-from optimisation approaches to reinforcement learning, in a complex and
-uncertain environment.
+*Simugh* (pronounced _Seymour_) is an open source experimentation platform that
+supports developing and evaluating algorithms for air traffic control scenarios.
 
-Air traffic control is a complex task requiring real-time planning under
-uncertainty, predicting potential conflicts and issuing commands to aircraft
-pilots to ensure safety. This project investigates machine learning methods that
-can be applied to this domain and could in future help air traffic controllers
-in effective decision-making. Using simulations similar to training scenarios
-for actual air traffic controllers, the project builds an open experimentation
-platform to evaluate possible machine learning approaches to this task, and
-explores algorithms to 'play' the simulation in the role of air traffic
-controllers.
+Air traffic control (ATC) is a complex task requiring real-time safety-critical decision
+making. The primary aim is predicting potential conflicts and issuing commands
+to aircraft pilots to ensure safety. In addition to maintaining safe operation,
+there are a number of secondary objectives, such as fuel efficiency, the number
+and frequency of instructions issued and orderly handover between sectors. There
+are also a number of sources of uncertainty inherent to the problem, such as aircraft
+mass, pilot behaviour and weather conditions. Accounting for this uncertainty while
+optimising for the numerous objectives in real time makes this a particularly challenging task.
+
+Simurgh provides a user-friendly interface for communicating with an open source
+air traffic simulator [Bluesky](https://github.com/alan-turing-institute/bluesky).
+It also provides synthetically generated scenarios, similar to training scenarios
+for air traffic controllers, and evaluation metrics that capture the goals of
+air traffic control. Altogether, this provides a research-focused platform for evaluating
+different machine learning algorithms for real-time decision-making, from optimisation
+approaches to reinforcement learning, in a complex and uncertain environment.
 
 The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project contains several
-elements that all work together to achieve the aims laid out above; these are:
+elements that all work together to achieve this:
 
-- [Bluesky](https://github.com/alan-turing-institute/bluesky) - open source air traffic simulator
+- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication with the air traffic simulator (e.g., Bluesky)
 
-- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication between Bluesky and air traffic control agents
+- [aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
+
+- [Dodo](https://github.com/alan-turing-institute/dodo) - scaffolds for ATC agents in Python, R (and potentially other languages)
 
 - [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for monitoring the simulation
 
-- [Dodo](https://github.com/alan-turing-institute/dodo) - scaffolds for ATC agents in Python, R, and potentially other languages
+![](./docs/img/simurgh-deps.png)
 
 ## Quick Start
 
-If one has Docker installed, perhaps the most "hassle free" option would be to run:
+### ??
+
+If one has Docker installed, the most "hassle free" option is to run:
 
 ```
 docker-compose up -d
 ```
 
-This will pull down the pre-built images from DockerHub and
-start each container in order. Then all one needs to do is go to
+This pulls down the pre-built images from DockerHub and
+starts each container in the right order. Then all one needs to do is go to
 `http://localhost:8080` where Twitcher will be running.
 
 _Note_: If this is the first time running this command, it may take some time to
@@ -48,11 +56,40 @@ Then to close this, run:
 
 ```
 docker-compose down
-``` 
+```
 
 This will shutdown the running instances.
 
-# Installation
+### DoDo
+
+![](./docs/img/dodo-bird.png)
+
+PyDodo is the Python implementation of Dodo. It is a scaffold for developing
+algorithms.
+
+To install:
+
+```bash
+git clone https://github.com/alan-turing-institute/dodo.git
+cd dodo/Pydodo
+pip install .
+```
+
+If the dockers are running, then one can communicate with the simulator (via
+BlueBird) using pydodo:
+
+```python
+>>> import pydodo
+>>>
+>>> pydodo.reset_simulation()
+True
+>>>
+```
+Success!
+
+
+## Development
+
 
 In order to get things up and running, it is important to emphasise the
 dependencies tree of the packages outlined above. When cloning `simugh` be sure
@@ -61,8 +98,6 @@ to run:
 ```bash
 git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
 ```
-
-![](./docs/img/simurgh-deps.png)
 
 A full step-by-step installation guide can be found
 at:https://alan-turing-institute.github.io/simurgh/
@@ -78,7 +113,7 @@ source install.sh
 This will create a conda environment call `nats` and install all necessary
 dependencies required. Please see User Guide for how to get going.
 
-## Bluesky
+## Bluesky installation
 
 Original instructions can be found on:
 
@@ -195,9 +230,9 @@ Now that the instance of the simulator is up and running and connected to the
 desired ports, one can now spin up Bluebird, which is the interface layer
 between the simulator and the AI agents.
 
-## Bluebird
+## Bluebird installation
 
-If Bluesky was install successfully, then it should be as simply as doing:
+If Bluesky was install successfully, then it should be as simple as doing:
 ```bash
 (nats) $$ cd bluebird && python run.py
 ```
@@ -221,28 +256,8 @@ Client active node changed.
 Now we have the simulator running, and the interface that sits on top, we can
 now connect our AI agents.
 
-## DoDo
 
-![](./docs/img/dodo-bird.png)
-
-Here
-
-```bash
-git clone https://github.com/alan-turing-institute/dodo.git
-cd dodo/Pydodo
-pip install .
-```
-
-```python
->>> import pydodo
->>>
->>> pydodo.reset_simulation()
-True
->>>
-```
-Success!
-
-## Twitcher (Optional)
+<!-- ## Twitcher (Optional) -->
 
 ## Run all together
 
@@ -313,5 +328,3 @@ INFO    -  Your documentation should shortly be available at: https://alan-turin
 ## Troubleshooting
 
 ## Testing
-
-
