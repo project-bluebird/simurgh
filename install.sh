@@ -16,7 +16,9 @@ if [ -e "environment.yml" ]; then
   #     echo "Conda env '$ENV' doesn't exist."
   #     echo "Creating '$ENV' environment now .. "
 
+  which conda
   conda activate $ENV || conda env create -q;
+  echo "CONDITION-0: $?"
 
   if [ `uname` == "Linux" ]; then
       # Export path variables for linux
@@ -27,6 +29,7 @@ if [ -e "environment.yml" ]; then
   fi
 
   conda activate $ENV;
+  echo "CONDITION-1: $?"
 
 fi
 
