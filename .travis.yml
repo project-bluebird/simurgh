@@ -48,6 +48,8 @@ script:
   - "conda install r-devtools"
   - "conda install r-config"
   - "conda install r-testthat"
+  - "conda install r-units"
+  - "conda install r-geosphere"
   - "conda install -c conda-forge r-future"
   - "R CMD check --no-build-vignettes --no-manual $SIMURGH_HOME/dodo/rdodo"
 

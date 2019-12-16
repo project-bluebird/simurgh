@@ -20,6 +20,8 @@ dependencies:
   - r-testthat
   - r-future
   - r-irkernel
+  - r-units
+  - r-geosphere
 
   - pip:
     - flask
