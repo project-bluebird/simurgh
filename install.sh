@@ -7,14 +7,11 @@ if [ -e "environment.yml" ]; then
   # Get environment name associated with 'name' variable in file
   ENV=`grep 'name:' environment.yml | tail -n1 | awk '{ print $2}'`
 
-
   # Check if you are already in the environment
   if [[ $PATH != *$ENV* ]]; then
     # Check if the environment exists
     conda activate $ENV
-    if [ $? -eq 0 ]; then
-      :
-    else
+    if [ $? -ne 0 ]; then
       # Create the environment and activate
       echo "Conda env '$ENV' doesn't exist."
       echo "Creating '$ENV' environment now .. "
@@ -36,7 +33,6 @@ if [ -e "environment.yml" ]; then
 fi
 
 ## Install Bluesky
-
 BLUESKY_DIR=./bluesky/
 BLUEBIRD_DIR=./bluebird/
 
