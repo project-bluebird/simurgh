@@ -31,7 +31,6 @@ install:
   - "export PATH=\"$HOME/miniconda/bin:$PATH\""
   - "echo $PATH"
   - "ls $HOME/miniconda/"
-  - "tree $HOME/miniconda/"
   - "hash -r"
   - "conda config --set always_yes yes --set changeps1 no"
   - "conda update -q conda"
