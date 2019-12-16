@@ -10,3 +10,6 @@
 [submodule "bluesky"]
 	path = bluesky
 	url = https://github.com/alan-turing-institute/bluesky.git
+[submodule "aviary"]
+	path = aviary
+	url = https://github.com/alan-turing-institute/aviary
