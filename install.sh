@@ -17,7 +17,7 @@ if [ -e "environment.yml" ]; then
   #     echo "Creating '$ENV' environment now .. "
 
   which conda
-  conda activate $ENV || conda env create -q;
+  conda activate $ENV || conda env create -f environment.yml
   echo "CONDITION-0: $?"
 
   if [ `uname` == "Linux" ]; then
