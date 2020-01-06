@@ -1,13 +1,13 @@
 # This file may be used to create an environment using:
 # $ conda env create --name <env> --file <this file>
 # platform: linux-64
-name: nats
+name: nats37
 
 channels:
   - conda-forge
 
 dependencies:
-  - python=3.6
+  - python=3.7
   - pyqt
   - numpy
   - scipy
@@ -30,6 +30,7 @@ dependencies:
     - geojson
     - jsonpath-rw-ext
     - markdown
+    - mock
     - msgpack
     - python-dotenv
     - pyzmq
@@ -39,10 +40,13 @@ dependencies:
     - pyopengl
     - pyopengl-accelerate
     - psutil==5.5.*
-    - pytest==4.1.*
+    - pytest==5.2.0
+    - pytest-docker-compose
     - pylint==2.2.*
     - pylint-exit==1.0.*
     - pyqt5
     - ruamel_yaml
+    - semver
     - shapely
     - wget
+    - "--editable=git+https://github.com/alan-turing-institute/aviary.git@develop#egg=aviary"
