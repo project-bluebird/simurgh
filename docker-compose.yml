@@ -3,7 +3,7 @@ version: '3'
 services:
   bluesky:
     container_name: bluesky
-    image: turinginst/bluesky:1.2.2
+    image: turinginst/bluesky:1.2.3
     expose:
       - 9000
       - 9001
