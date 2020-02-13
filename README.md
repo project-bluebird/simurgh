@@ -37,6 +37,7 @@ elements that all work together to achieve this:
 
 ## Quick Start
 
+### 1. BlueBird and BlueSky
 
 If one has Docker installed, the most "hassle free" option is to run:
 
@@ -59,6 +60,8 @@ docker-compose down
 
 This will shutdown the running instances.
 
+### 2. PyDodo
+
 PyDodo is the Python implementation of Dodo. It is a scaffold for developing
 algorithms.
 
@@ -70,8 +73,7 @@ cd dodo/Pydodo
 pip install .
 ```
 
-
-If the dockers are running, then one can communicate with the simulator (via
+If the dockers are running, then one can communicate with the BlueSky simulator (via
 BlueBird) using pydodo:
 
 ```python
@@ -83,12 +85,10 @@ True
 ```
 Success!
 
-
 ## Development
 
-
 In order to get things up and running, it is important to emphasise the
-dependencies tree of the packages outlined above. When cloning `simugh` be sure
+dependencies tree of the packages outlined above. When cloning `simurgh` be sure
 to run:
 
 ```bash
@@ -106,10 +106,10 @@ running:
 source install.sh
 ```
 
-This will create a conda environment call `nats` and install all necessary
+This will create a conda environment called `nats` and install all necessary
 dependencies required. Please see User Guide for how to get going.
 
-## Bluesky installation
+### Bluesky installation
 
 Original instructions can be found on:
 
@@ -155,7 +155,7 @@ dependencies:
 conda env create -q && conda activate nats
 ```
 
-Now that dependencies are install for both Bluesky & Bluebird, we can at least
+Now that dependencies are installed for both Bluesky & Bluebird, we can at least
 check that these are OK by running `check.py` inside the Bluesky repository.
 
 Running `python bluesky/check.py `will produce the following output:
@@ -226,7 +226,7 @@ Now that the instance of the simulator is up and running and connected to the
 desired ports, one can now spin up Bluebird, which is the interface layer
 between the simulator and the AI agents.
 
-## Bluebird installation
+### Bluebird installation
 
 If Bluesky was install successfully, then it should be as simple as doing:
 ```bash
@@ -255,7 +255,7 @@ now connect our AI agents.
 
 <!-- ## Twitcher (Optional) -->
 
-## Run all together
+### Run all together
 
 * SPIN UP
 ```bash
