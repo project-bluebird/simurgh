@@ -3,7 +3,7 @@ version: '3'
 services:
   bluesky:
     container_name: bluesky
-    image: turinginst/bluesky:1.2.3
+    image: turinginst/bluesky:1.4.0-dev
     expose:
       - 9000
       - 9001
@@ -11,7 +11,7 @@ services:
     container_name: bluebird
     depends_on:
       - bluesky
-    image: turinginst/bluebird:1.3.0
+    image: turinginst/bluebird:latest
     ports:
       - 5001:5001
     environment:
