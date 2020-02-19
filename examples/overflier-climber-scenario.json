@@ -1,0 +1,129 @@
+{
+    "startTime": "00:00:00",
+    "aircraft": [
+        {
+            "timedelta": 0,
+            "startPosition": [
+                -0.1275,
+                50.8022135784117
+            ],
+            "callsign": "VJ159",
+            "type": "A346",
+            "departure": "DEP",
+            "destination": "DEST",
+            "currentFlightLevel": 360,
+            "clearedFlightLevel": 360,
+            "requestedFlightLevel": 360,
+            "route": [
+                {
+                    "fixName": "EARTH",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            51.08383154960228
+                        ]
+                    }
+                },
+                {
+                    "fixName": "WATER",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            51.49999999999135
+                        ]
+                    }
+                },
+                {
+                    "fixName": "AIR",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            51.916128869951486
+                        ]
+                    }
+                },
+                {
+                    "fixName": "SPIRT",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            52.08256690115545
+                        ]
+                    }
+                }
+            ],
+            "startTime": "00:00:00"
+        },
+        {
+            "timedelta": 0,
+            "startPosition": [
+                -0.1275,
+                52.27420759074649
+            ],
+            "callsign": "VJ405",
+            "type": "B77W",
+            "departure": "DEST",
+            "destination": "DEP",
+            "currentFlightLevel": 300,
+            "clearedFlightLevel": 300,
+            "requestedFlightLevel": 400,
+            "route": [
+                {
+                    "fixName": "SPIRT",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            52.08256690115545
+                        ]
+                    }
+                },
+                {
+                    "fixName": "AIR",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            51.916128869951486
+                        ]
+                    }
+                },
+                {
+                    "fixName": "WATER",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            51.49999999999135
+                        ]
+                    }
+                },
+                {
+                    "fixName": "EARTH",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            51.08383154960228
+                        ]
+                    }
+                },
+                {
+                    "fixName": "FIYRE",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.1275,
+                            50.91735552314281
+                        ]
+                    }
+                }
+            ],
+            "startTime": "00:00:00"
+        }
+    ]
+}
