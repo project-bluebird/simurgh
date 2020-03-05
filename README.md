@@ -2,30 +2,25 @@
 
 # Simurgh
 
-*Simugh* (pronounced _Seymour_) is an open source experimentation platform that
-supports developing and evaluating algorithms for air traffic control scenarios.
+*Simurgh* (pronounced _Seymour_) is an open source platform that supports developing and evaluating 
+algorithms for automated air traffic control. It provides an easy to use interface and scaffold 
+for running experiments with AI agents in an air traffic simulator.
+ 
+## Introduction
 
 Air traffic control (ATC) is a complex task requiring real-time safety-critical decision
-making. The primary aim is predicting potential conflicts and issuing commands
-to aircraft pilots to ensure safety. In addition to maintaining safe operation,
-there are a number of secondary objectives, such as fuel efficiency, the number
-and frequency of instructions issued and orderly handover between sectors. There
-are also a number of sources of uncertainty inherent to the problem, such as aircraft
-mass, pilot behaviour and weather conditions. Accounting for this uncertainty while
-optimising for the numerous objectives in real time makes this a particularly challenging task.
+making under uncertainty (e.g., due to aircraft mass, pilot behaviour or weather conditions). 
+In practice, air traffic control operators (ATCOs) monitor a given sector and issue commands 
+to aircraft pilots to ensure safe separation between aircraft. They also have to consider 
+the number and frequency of instructions issued, fuel efficiency and orderly handover between sectors.
 
-Simurgh provides a user-friendly interface for communicating with an open source
-air traffic simulator [Bluesky](https://github.com/alan-turing-institute/bluesky).
-It also provides synthetically generated scenarios, similar to training scenarios
-for air traffic controllers, and evaluation metrics that capture the goals of
-air traffic control. Altogether, this provides a research-focused platform for evaluating
-different machine learning algorithms for real-time decision-making, from optimisation
-approaches to reinforcement learning, in a complex and uncertain environment.
+The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research-focused user-friendly 
+platform for developing and evaluating automated approaches to air traffic control, a task that 
+requires real-time decision making in a complex and uncertain environment.
 
-The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project contains several
-elements that all work together to achieve this:
+Simurgh consists of several elements that all work together to achieve this:
 
-- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication with the air traffic simulator (e.g., Bluesky)
+- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication with the air traffic simulator (e.g., [Bluesky](https://github.com/alan-turing-institute/bluesky))
 
 - [aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
 
@@ -84,6 +79,12 @@ True
 >>>
 ```
 Success!
+
+## Usage
+
+See the example agent notebook!
+
+It shows how an AI agent can be trained using the above described infrastructure to undertake the role of Air Traffic Control Operator (ATCO).
 
 ## Development
 
