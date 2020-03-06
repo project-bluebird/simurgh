@@ -2,39 +2,45 @@
 
 # Simurgh
 
-*Simurgh* (pronounced _Seymour_) is an open source platform that supports developing and evaluating 
-algorithms for automated air traffic control. It provides an easy to use interface and scaffold 
+*Simurgh* (pronounced _Seymour_) is an open source platform that supports developing
+algorithms for automated air traffic control. It provides an easy to use interface
 for running experiments with AI agents in an air traffic simulator.
- 
-## Introduction
+
+## Overview
 
 Air traffic control (ATC) is a complex task requiring real-time safety-critical decision
-making under uncertainty (e.g., due to aircraft mass, pilot behaviour or weather conditions). 
-In practice, air traffic control operators (ATCOs) monitor a given sector and issue commands 
-to aircraft pilots to ensure safe separation between aircraft. They also have to consider 
+making. In practice, air traffic control operators (ATCOs) monitor a given sector and issue commands
+to aircraft pilots to ensure safe separation between aircraft. They also have to consider
 the number and frequency of instructions issued, fuel efficiency and orderly handover between sectors.
+Optimising for the multiple objectives while accounting for uncertainty (e.g., due to aircraft mass, pilot behaviour or weather conditions) makes this a particularly complex task.
 
-The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research-focused user-friendly 
-platform for developing and evaluating automated approaches to air traffic control, a task that 
-requires real-time decision making in a complex and uncertain environment.
+The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research-focused user-friendly
+platform for testing automated approaches to ATC. It consists of several elements that
+all work together to achieve this:
 
-Simurgh consists of several elements that all work together to achieve this:
-
-- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication with the air traffic simulator (e.g., [Bluesky](https://github.com/alan-turing-institute/bluesky))
+- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication with the air traffic simulator (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
 
 - [aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
 
-- [Dodo](https://github.com/alan-turing-institute/dodo) - scaffolds for ATC agents in Python, R (and potentially other languages)
+- [Dodo](https://github.com/alan-turing-institute/dodo) - scaffold for building ATC agents, which provides functions for controlling the simulation, issuing commands to aircraft and scoring performance in Python, R (and potentially other languages)
 
 - [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for monitoring the simulation
+
+With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation using Twitcher, Python (PyDodo) or R (rdodo). The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance. The scenarios and metrics were developed so as to be relevant to real world ATC operations as well as suitable for research. Altogether this infrastructure allows one to focus on running experiments in automated air traffic control and is compatible with testing different approaches, from optimisation algorithms to reinforcement learning.
 
 ![](./docs/img/simurgh-deps.png)
 
 ## Quick Start
 
-### 1. BlueBird and BlueSky
+The above figure shows the dependency flow. One needs to have BlueSky running before BlueBird can operate.
+Twicher and Dodo similarly require BlueBird to be running in order to work.
 
-If one has Docker installed, the most "hassle free" option is to run:
+### 1. Run BlueBird and BlueSky (& Twicher) with Docker
+
+The easiest way to run BlueBird and BlueSky is through [Docker](https://www.docker.com)
+(see [below](#running-bluesky-and-bluebird-locally) for instructions on how to run BlueSky and BlueBird locally rather than using Docker).
+
+If you have Docker installed, clone this repo and run:
 
 ```
 docker-compose up -d
@@ -55,10 +61,9 @@ docker-compose down
 
 This will shutdown the running instances.
 
-### 2. PyDodo
+### 2. Install PyDodo
 
-PyDodo is the Python implementation of Dodo. It is a scaffold for developing
-algorithms.
+PyDodo is the Python implementation of Dodo.
 
 To install:
 
@@ -68,8 +73,8 @@ cd dodo/Pydodo
 pip install .
 ```
 
-If the dockers are running, then one can communicate with the BlueSky simulator (via
-BlueBird) using pydodo:
+If BlueSky and BlueBird are running, then one can communicate with the simulator (via
+BlueBird) using PyDodo:
 
 ```python
 >>> import pydodo
@@ -78,79 +83,38 @@ BlueBird) using pydodo:
 True
 >>>
 ```
+
 Success!
 
-## Usage
+See the Dodo [specification document](https://github.com/alan-turing-institute/dodo/blob/master/Specification.md) for a detailed overview of the supported commands.
 
-See the example agent notebook!
+### 3. Example usage
 
-It shows how an AI agent can be trained using the above described infrastructure to undertake the role of Air Traffic Control Operator (ATCO).
+The [example notebook](https://github.com/alan-turing-institute/simurgh/blob/issue/6/example-agent-notebook/examples/Example-pipeline.ipynb) shows how to interact with the simulation using PyDodo and gives a simple example of how to train an AI agent to act as an ATCO.
 
-## Development
+## Running BlueSky and BlueBird locally
 
-In order to get things up and running, it is important to emphasise the
-dependencies tree of the packages outlined above. When cloning `simurgh` be sure
-to run:
+This section describes how to install and run BlueSky and BlueBird locally rather than using pre-built Docker images.
+
+All instructions below assume one has cloned the `simurgh` repository along with all the submodels.
+When cloning `simurgh` be sure to run:
 
 ```bash
 git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
 ```
 
-A full step-by-step installation guide can be found
-at:https://alan-turing-institute.github.io/simurgh/
-
-However, if one would like to get up and running immediately this set of
-commands will install all dependencies and start the application using Docker by
-running:
+The below command will create a conda environment called `nats` and install all
+necessary dependencies for BlueSky and BlueBird as well as PyDodo.
 
 ```bash
 source install.sh
 ```
 
-This will create a conda environment called `nats` and install all necessary
-dependencies required. Please see User Guide for how to get going.
+#### BlueSky and BlueBird installation
 
-### Bluesky installation
+The dependencies are specified in an [`environment.yml`](https://github.com/alan-turing-institute/simurgh/blob/master/environment.yml) file.
 
-Original instructions can be found on:
-
-However, it has been found to be much easier to have `environment.yml` file instead.
-```bash
-# This file may be used to create an environment using:
-# $ conda env create --name <env> --file <this file>
-# platform: linux-64
-name: nats
-
-channels:
-  - conda-forge
-
-dependencies:
-  - python=3.6
-  - pyqt
-  - numpy
-  - scipy
-  - matplotlib
-  - pandas
-  - r-base
-
-  - pip:
-    - flask
-    - flask_cors
-    - flask_restful
-    - markdown
-    - msgpack
-    - python-dotenv
-    - pyzmq
-    - pygame
-    - pyproj    # birdhouse dep
-    - pyqtwebengine
-    - pyopengl
-    - pyopengl-accelerate
-    - psutil==5.5.*
-    - pytest==4.1.*
-    - pylint==2.2.*
-    - pylint-exit==1.0.*
-```
+To go through the steps in the install script run:
 
 ```bash
 conda env create -q && conda activate nats
@@ -159,7 +123,7 @@ conda env create -q && conda activate nats
 Now that dependencies are installed for both Bluesky & Bluebird, we can at least
 check that these are OK by running `check.py` inside the Bluesky repository.
 
-Running `python bluesky/check.py `will produce the following output:
+Running `python bluesky/check.py` will produce the following output:
 
 ```bash
 (nats) $$ python bluesky/check.py
@@ -251,16 +215,13 @@ Client active node changed.
 ```
 
 Now we have the simulator running, and the interface that sits on top, we can
-now connect our AI agents.
-
-
-<!-- ## Twitcher (Optional) -->
+connect our AI agents.
 
 ### Run all together
 
 * SPIN UP
 ```bash
-( cd bluesky && python Bluesky.py --headless ) &
+(nats) $$ ( cd bluesky && python Bluesky.py --headless ) &
 ( cd bluebird && python run.py )
 ```
 
@@ -313,15 +274,18 @@ mkdocs build --clean
 When docs have been built, they can then be deployed online to the public facing
 project page [here](https://alan-turing-institute.github.io/simurgh/) with the
 following command:
+
 ```bash
 mkdocs gh-deploy
 ```
+
 This will produce the following output:
+
 ```bash
 INFO    -  Cleaning site directory
 INFO    -  Your documentation should shortly be available at: https://alan-turing-institute.github.io/simurgh/
 ```
 
-## Troubleshooting
+## Contributing
 
-## Testing
+The project is still under development. We welcome contributions to all elements of the project.
