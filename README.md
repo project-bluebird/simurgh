@@ -3,8 +3,8 @@
 # Simurgh
 
 *Simurgh* (pronounced _Seymour_) is an open source platform that supports developing
-algorithms for automated air traffic control. It provides an easy to use interface
-for running experiments with AI agents in an air traffic simulator.
+and evaluating algorithms (AI agents) for automated air traffic control. It provides
+an easy to use interface for running experiments in an air traffic simulator.
 
 ## Overview
 
@@ -18,15 +18,15 @@ The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research
 platform for testing automated approaches to ATC. It consists of several elements that
 all work together to achieve this:
 
-- [Bluebird](https://github.com/alan-turing-institute/bluebird) - server that handles communication with the air traffic simulator (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
+- [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with multiple air traffic simulators (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
 
 - [aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
 
-- [Dodo](https://github.com/alan-turing-institute/dodo) - scaffold for building ATC agents, which provides functions for controlling the simulation, issuing commands to aircraft and scoring performance in Python, R (and potentially other languages)
+- [Dodo](https://github.com/alan-turing-institute/dodo) - scaffold for building ATC agents, which provides commands for communicating with BlueBird in Python (PyDodo) and R (rdodo)
 
-- [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for monitoring the simulation
+- [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for BlueBird for monitoring the simulation
 
-With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation using Twitcher, Python (PyDodo) or R (rdodo). The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance. The scenarios and metrics were developed so as to be relevant to real world ATC operations as well as suitable for research. Altogether this infrastructure allows one to focus on running experiments in automated air traffic control and is compatible with testing different approaches, from optimisation algorithms to reinforcement learning.
+With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twicher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance. The scenarios and metrics were developed so as to be relevant to real world ATC operations as well as suitable for research. Altogether this infrastructure allows one to focus on running experiments in automated air traffic control and is compatible with testing different approaches, from optimisation algorithms to reinforcement learning.
 
 ![](./docs/img/simurgh-deps.png)
 
@@ -103,30 +103,21 @@ When cloning `simurgh` be sure to run:
 git clone --recurse-submodules -j8 git@github.com:alan-turing-institute/simurgh.git
 ```
 
-The below command will create a conda environment called `nats` and install all
-necessary dependencies for BlueSky and BlueBird as well as PyDodo.
+### 1. Install dependencies
+
+All dependencies for BlueSky and BlueBird are specified in the `environment.yml` file.
+To create a conda environment called `nats37` with all the required dependencies run:
 
 ```bash
-source install.sh
+conda env create -q && conda activate nats37
 ```
 
-#### BlueSky and BlueBird installation
-
-The dependencies are specified in an [`environment.yml`](https://github.com/alan-turing-institute/simurgh/blob/master/environment.yml) file.
-
-To go through the steps in the install script run:
-
-```bash
-conda env create -q && conda activate nats
-```
-
-Now that dependencies are installed for both Bluesky & Bluebird, we can at least
-check that these are OK by running `check.py` inside the Bluesky repository.
+We can check BlueSky dependencies are OK by running `check.py` inside the Bluesky repository.
 
 Running `python bluesky/check.py` will produce the following output:
 
 ```bash
-(nats) $$ python bluesky/check.py
+(nats37) $$ python bluesky/check.py
 This script checks the availability of the libraries required by BlueSky, and
 the capabilities of your system.
 
@@ -153,17 +144,18 @@ Successfully loaded all BlueSky modules. Start BlueSky by running BlueSky.py.
 
 ```
 
-The above command only checks the dependencies for Bluesky, if it was indeed
-successful, we can now install Bluesky into the Python path with:
+If the above command is successful, we can now install Bluesky into the Python path with:
 
 ```bash
-(nats) $$ pip install bluesky/
+(nats37) $$ pip install bluesky/
 ```
 
-From here, all the necessary items should be installed, Bluesky can now be
-launched with:
+### 2. Run BlueSky
+
+Bluesky can now be launched with:
+
 ```bash
-(nats) $$ cd bluesky && python Bluesky.py
+(nats37) $$ cd bluesky && python Bluesky.py
 ```
 
 The above command will start the Bluesky simulator with the in built GUI which
@@ -175,29 +167,33 @@ If one would like to run Bluesky _without_ the default GUI, a headless version
 is available with the command:
 
 ```bash
-(nats) $$ cd bluesky && python Bluesky.py --headless
+(nats37) $$ cd bluesky && python Bluesky.py --headless
 ```
 
-If perhaps the user wished to connect the running instance to a remote host this
+If one wished to connect the running instance to a remote host this
 can be done with:
 
 ```bash
-(nats) $$ cd bluesky && python BlueSky.py --client --bluesky_host=1.2.3.4
+(nats37) $$ cd bluesky && python BlueSky.py --client --bluesky_host=1.2.3.4
 ```
+
 This will skip discovery and attempt a connection to the specified host (using
-the default ports)
+the default ports).
 
 Now that the instance of the simulator is up and running and connected to the
 desired ports, one can now spin up Bluebird, which is the interface layer
 between the simulator and the AI agents.
 
-### Bluebird installation
+### 3. Run BlueBird
 
-If Bluesky was install successfully, then it should be as simple as doing:
+If Bluesky was installed successfully, then it should be as simple as running:
+
 ```bash
-(nats) $$ cd bluebird && python run.py
+(nats37) $$ cd bluebird && python run.py
 ```
+
 This should produce the following output:
+
 ```bash
 2019-08-08 18:08:31 INFO     bluebird.bluebird: Connecting to client...
 Client 0b06b30f connected to host 5dd3f7f1 of version 1.2.1
@@ -212,44 +208,6 @@ Client active node changed.
  * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
 2019-08-08 18:08:46 INFO     bluebird.cache.sim_state: speed=0.0x, ticks=   0, time=00:00:00, state=INIT, aircraft=0
 
-```
-
-Now we have the simulator running, and the interface that sits on top, we can
-connect our AI agents.
-
-### Run all together
-
-* SPIN UP
-```bash
-(nats) $$ ( cd bluesky && python Bluesky.py --headless ) &
-( cd bluebird && python run.py )
-```
-
-* TEAR DOWN
-```bash
-<CTRL>-C
-fg
-<CTRL>-C
-```
-The tear down output will look similar to:
-
-```bash
- * Serving Flask app "bluebird.api" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: on
-Client active node changed.
- * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
-2019-08-09 13:28:40 INFO     bluebird.cache.sim_state: speed=0.0x, ticks=   0, time=00:00:00, state=INIT, aircraft=0
-^C2019-08-09 13:28:43 INFO     bluebird.bluebird: BlueBird stopping
-(nats) $$ fg
-( cd bluesky && python Bluesky.py --headless )
-
-^C# Node(9ca92ee2): Quitting (KeyboardInterrupt)
-# Server quitting (KeyboardInterrupt)
-# Server: Main loop exit. Waiting for spawned processes to exit...
-# Server: Spawned processes joined. Server stopping
 ```
 
 ## Documentation
