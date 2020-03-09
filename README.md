@@ -6,7 +6,16 @@
 and evaluating algorithms (AI agents) for automated air traffic control. It provides
 an easy to use interface for running experiments in an air traffic simulator.
 
-## Overview
+## Table of contents
+
+- [Project overview](#project-overview)
+- [Quick start](#quick-start)
+- [Example usage](#example-usage)
+- [Running locally](#running-locally)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+
+## Project overview
 
 Air traffic control (ATC) is a complex task requiring real-time safety-critical decision
 making. In practice, air traffic control operators (ATCOs) monitor a given sector and issue commands
@@ -18,6 +27,8 @@ The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research
 platform for testing automated approaches to ATC. It consists of several elements that
 all work together to achieve this:
 
+![](./docs/img/simurgh-deps.png)
+
 - [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with multiple air traffic simulators (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
 
 - [aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
@@ -28,8 +39,6 @@ all work together to achieve this:
 
 With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twicher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance. The scenarios and metrics were developed so as to be relevant to real world ATC operations as well as suitable for research. Altogether this infrastructure allows one to focus on running experiments in automated air traffic control and is compatible with testing different approaches, from optimisation algorithms to reinforcement learning.
 
-![](./docs/img/simurgh-deps.png)
-
 ## Quick Start
 
 The above figure shows the dependency flow. One needs to have BlueSky running before BlueBird can operate.
@@ -38,7 +47,7 @@ Twicher and Dodo similarly require BlueBird to be running in order to work.
 ### 1. Run BlueBird and BlueSky (& Twicher) with Docker
 
 The easiest way to run BlueBird and BlueSky is through [Docker](https://www.docker.com)
-(see [below](#running-bluesky-and-bluebird-locally) for instructions on how to run BlueSky and BlueBird locally rather than using Docker).
+(see [below](#running-locally) for instructions on how to run BlueSky and BlueBird locally rather than using Docker).
 
 If you have Docker installed, clone this repo and run:
 
@@ -88,11 +97,11 @@ Success!
 
 See the Dodo [specification document](https://github.com/alan-turing-institute/dodo/blob/master/Specification.md) for a detailed overview of the supported commands.
 
-### 3. Example usage
+## Example usage
 
 The [example notebook](https://github.com/alan-turing-institute/simurgh/blob/issue/6/example-agent-notebook/examples/Example-pipeline.ipynb) shows how to interact with the simulation using PyDodo and gives a simple example of how to train an AI agent to act as an ATCO.
 
-## Running BlueSky and BlueBird locally
+## Running locally
 
 This section describes how to install and run BlueSky and BlueBird locally rather than using pre-built Docker images.
 
