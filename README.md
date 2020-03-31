@@ -31,17 +31,17 @@ all work together to achieve this:
 
 - [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with multiple air traffic simulators (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
 
-- [aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
+- [Aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
 
 - [Dodo](https://github.com/alan-turing-institute/dodo) - scaffold for building ATC agents, which provides commands for communicating with BlueBird in Python (PyDodo) and R (rdodo)
 
 - [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for BlueBird for monitoring the simulation
 
-With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twicher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance. The scenarios and metrics were developed so as to be relevant to real world ATC operations as well as suitable for research. Altogether this infrastructure allows one to focus on running experiments in automated air traffic control and is compatible with testing different approaches, from optimisation algorithms to reinforcement learning.
+With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twicher. The Aviary package can be used to generate synthetic ATC scenarios of increasing complexity to train agents on and provides metrics to score performance. The scenarios and metrics were developed to be relevant to real world ATC operations as well as suitable for research. Altogether this infrastructure allows one to focus on running experiments in automated air traffic control and is compatible with testing different approaches, from optimisation algorithms to reinforcement learning.
 
 ## Quick Start
 
-The above figure shows the dependency flow. One needs to have BlueSky running before BlueBird can operate.
+The above figure shows the dependency flow. One needs to have a simulator (e.g., BlueSky) running before BlueBird can operate.
 Twicher and Dodo similarly require BlueBird to be running in order to work.
 
 ### 1. Run BlueBird and BlueSky (& Twicher) with Docker
