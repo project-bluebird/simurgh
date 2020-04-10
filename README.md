@@ -99,7 +99,7 @@ See the Dodo [specification document](https://github.com/alan-turing-institute/d
 
 ## Example usage
 
-The [example notebook](https://github.com/alan-turing-institute/simurgh/blob/issue/6/example-agent-notebook/examples/Example-pipeline.ipynb) shows how to interact with the simulation using PyDodo and gives a simple example of how to train an AI agent to act as an ATCO.
+The [example notebook](https://github.com/alan-turing-institute/simurgh/blob/master/examples/Example-pipeline.ipynb) shows how to interact with the simulation using PyDodo.
 
 ## Running locally
 
