@@ -1,0 +1,257 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {},
+            "properties": {
+                "name": "MORTAL",
+                "type": "FIR",
+                "children": {
+                    "SECTOR": {
+                        "names": [
+                            "MORTAL"
+                        ]
+                    },
+                    "ROUTE": {
+                        "names": [
+                            "ASCENSION",
+                            "FALLEN"
+                        ]
+                    },
+                    "FIX": {
+                        "names": [
+                            "SPIRT",
+                            "AIR",
+                            "WATER",
+                            "EARTH",
+                            "FIYRE"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "MORTAL",
+                "type": "SECTOR",
+                "shape": "I",
+                "origin": [
+                    -0.1275,
+                    51.5
+                ],
+                "children": {
+                    "SECTOR_VOLUME": {
+                        "names": [
+                            "-14746818374995097"
+                        ]
+                    },
+                    "ROUTE": {
+                        "names": [
+                            "ASCENSION",
+                            "FALLEN"
+                        ]
+                    }
+                }
+            },
+            "geometry": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.2597,
+                            51.0838
+                        ],
+                        [
+                            -0.2621,
+                            51.9161
+                        ],
+                        [
+                            0.0071,
+                            51.9161
+                        ],
+                        [
+                            0.0047,
+                            51.0838
+                        ],
+                        [
+                            -0.2597,
+                            51.0838
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "-14746818374995097",
+                "type": "SECTOR_VOLUME",
+                "lower_limit": 140,
+                "upper_limit": 400,
+                "length_nm": 50,
+                "airway_width_nm": 10,
+                "offset_nm": 10,
+                "children": {}
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "ASCENSION",
+                "type": "ROUTE",
+                "children": {
+                    "FIX": {
+                        "names": [
+                            "FIYRE",
+                            "EARTH",
+                            "WATER",
+                            "AIR",
+                            "SPIRT"
+                        ]
+                    }
+                }
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.1275,
+                        50.9174
+                    ],
+                    [
+                        -0.1275,
+                        51.0838
+                    ],
+                    [
+                        -0.1275,
+                        51.5
+                    ],
+                    [
+                        -0.1275,
+                        51.9161
+                    ],
+                    [
+                        -0.1275,
+                        52.0826
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "FALLEN",
+                "type": "ROUTE",
+                "children": {
+                    "FIX": {
+                        "names": [
+                            "SPIRT",
+                            "AIR",
+                            "WATER",
+                            "EARTH",
+                            "FIYRE"
+                        ]
+                    }
+                }
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.1275,
+                        52.0826
+                    ],
+                    [
+                        -0.1275,
+                        51.9161
+                    ],
+                    [
+                        -0.1275,
+                        51.5
+                    ],
+                    [
+                        -0.1275,
+                        51.0838
+                    ],
+                    [
+                        -0.1275,
+                        50.9174
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "SPIRT",
+                "type": "FIX"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1275,
+                    52.0826
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "AIR",
+                "type": "FIX"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1275,
+                    51.9161
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "WATER",
+                "type": "FIX"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1275,
+                    51.5
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "EARTH",
+                "type": "FIX"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1275,
+                    51.0838
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "FIYRE",
+                "type": "FIX"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.1275,
+                    50.9174
+                ]
+            }
+        }
+    ]
+}
