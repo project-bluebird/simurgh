@@ -124,3 +124,5 @@ To run the example, launch the notebook using the command below (this will autom
 🚧The project is still under development. å🚧
 
 We welcome contributions to all elements of the project.
+
+You can either help improve the overall documentation here or go to the repository for the part of the project you want to contribute to ([Bluebird](https://github.com/alan-turing-institute/bluebird), [Twitcher](https://github.com/alan-turing-institutetwitcher, [Dodo](https://github.com/alan-turing-institute/dodo), [Aviary](https://github.com/alan-turing-institute/aviary)).
