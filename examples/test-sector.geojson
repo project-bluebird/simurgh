@@ -3,38 +3,8 @@
     "features": [
         {
             "type": "Feature",
-            "geometry": {},
             "properties": {
-                "name": "MORTAL",
-                "type": "FIR",
-                "children": {
-                    "SECTOR": {
-                        "names": [
-                            "MORTAL"
-                        ]
-                    },
-                    "ROUTE": {
-                        "names": [
-                            "ASCENSION",
-                            "FALLEN"
-                        ]
-                    },
-                    "FIX": {
-                        "names": [
-                            "SPIRT",
-                            "AIR",
-                            "WATER",
-                            "EARTH",
-                            "FIYRE"
-                        ]
-                    }
-                }
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "MORTAL",
+                "name": "test_sector",
                 "type": "SECTOR",
                 "shape": "I",
                 "origin": [
@@ -44,7 +14,7 @@
                 "children": {
                     "SECTOR_VOLUME": {
                         "names": [
-                            "-14746818374995097"
+                            "4878096944804515372"
                         ]
                     },
                     "ROUTE": {
@@ -63,37 +33,35 @@
                 "type": "Polygon",
                 "coordinates": [
                     [
-                        [
-                            -0.2597,
-                            51.0838
-                        ],
-                        [
-                            -0.2621,
-                            51.9161
-                        ],
-                        [
-                            0.0071,
-                            51.9161
-                        ],
-                        [
-                            0.0047,
-                            51.0838
-                        ],
-                        [
-                            -0.2597,
-                            51.0838
-                        ]
+                        -0.3895,
+                        50.6673
+                    ],
+                    [
+                        -0.3992,
+                        52.3319
+                    ],
+                    [
+                        0.1442,
+                        52.3319
+                    ],
+                    [
+                        0.1345,
+                        50.6673
+                    ],
+                    [
+                        -0.3895,
+                        50.6673
                     ]
                 ]
             },
             "properties": {
-                "name": "-14746818374995097",
+                "name": "4878096944804515372",
                 "type": "SECTOR_VOLUME",
-                "lower_limit": 140,
-                "upper_limit": 400,
-                "length_nm": 50,
-                "airway_width_nm": 10,
-                "offset_nm": 10,
+                "lower_limit": 50,
+                "upper_limit": 450,
+                "length_nm": 100,
+                "airway_width_nm": 20,
+                "offset_nm": 40,
                 "children": {}
             }
         },
@@ -119,11 +87,11 @@
                 "coordinates": [
                     [
                         -0.1275,
-                        50.9174
+                        50.0017
                     ],
                     [
                         -0.1275,
-                        51.0838
+                        50.6676
                     ],
                     [
                         -0.1275,
@@ -131,11 +99,11 @@
                     ],
                     [
                         -0.1275,
-                        51.9161
+                        52.3322
                     ],
                     [
                         -0.1275,
-                        52.0826
+                        52.9978
                     ]
                 ]
             }
@@ -162,11 +130,11 @@
                 "coordinates": [
                     [
                         -0.1275,
-                        52.0826
+                        52.9978
                     ],
                     [
                         -0.1275,
-                        51.9161
+                        52.3322
                     ],
                     [
                         -0.1275,
@@ -174,11 +142,11 @@
                     ],
                     [
                         -0.1275,
-                        51.0838
+                        50.6676
                     ],
                     [
                         -0.1275,
-                        50.9174
+                        50.0017
                     ]
                 ]
             }
@@ -193,7 +161,7 @@
                 "type": "Point",
                 "coordinates": [
                     -0.1275,
-                    52.0826
+                    52.9978
                 ]
             }
         },
@@ -207,7 +175,7 @@
                 "type": "Point",
                 "coordinates": [
                     -0.1275,
-                    51.9161
+                    52.3322
                 ]
             }
         },
@@ -235,7 +203,7 @@
                 "type": "Point",
                 "coordinates": [
                     -0.1275,
-                    51.0838
+                    50.6676
                 ]
             }
         },
@@ -249,9 +217,10 @@
                 "type": "Point",
                 "coordinates": [
                     -0.1275,
-                    50.9174
+                    50.0017
                 ]
             }
         }
-    ]
+    ],
+    "_source": "https://github.com/alan-turing-institute/aviary/blob/203d251de7ea07be7f4381efa85596d9aa5b8e45/aviary/test/conftest.py#L116"
 }

@@ -1,0 +1,140 @@
+{
+  "_source": "https://github.com/alan-turing-institute/aviary/blob/203d251de7ea07be7f4381efa85596d9aa5b8e45/aviary/test/conftest.py#L129",
+  "aircraft": [
+    {
+      "callsign": "VJ159",
+      "clearedFlightLevel": 400,
+      "currentFlightLevel": 400,
+      "departure": "DEP",
+      "destination": "DEST",
+      "requestedFlightLevel": 400,
+      "route": [
+        {
+          "fixName": "FIYRE",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              50.91735552314281
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "EARTH",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              51.08383154960228
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "WATER",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              51.49999999999135
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "AIR",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              51.916128869951486
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "SPIRT",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              52.08256690115545
+            ],
+            "type": "Point"
+          }
+        }
+      ],
+      "startPosition": [
+        -0.1275,
+        49.39138473926763
+      ],
+      "startTime": "00:00:00",
+      "timedelta": 0,
+      "type": "A346"
+    },
+    {
+      "callsign": "VJ405",
+      "clearedFlightLevel": 200,
+      "currentFlightLevel": 200,
+      "departure": "DEST",
+      "destination": "DEP",
+      "requestedFlightLevel": 400,
+      "route": [
+        {
+          "fixName": "SPIRT",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              52.08256690115545
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "AIR",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              51.916128869951486
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "WATER",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              51.49999999999135
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "EARTH",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              51.08383154960228
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "fixName": "FIYRE",
+          "geometry": {
+            "coordinates": [
+              -0.1275,
+              50.91735552314281
+            ],
+            "type": "Point"
+          }
+        }
+      ],
+      "startPosition": [
+        -0.1275,
+        53.57478111513239
+      ],
+      "startTime": "00:00:00",
+      "timedelta": 0,
+      "type": "B77W"
+    }
+  ],
+  "startTime": "00:00:00"
+}
