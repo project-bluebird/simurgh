@@ -3,8 +3,7 @@
 # Simurgh
 
 *Simurgh* (pronounced _Seymour_) is an open source platform that supports developing
-and evaluating algorithms (AI agents) for automated air traffic control. It provides
-an easy to use interface for running experiments in an air traffic simulator as well as packages that support agent development.
+and evaluating algorithms (AI agents) for air traffic control.
 
 ## Table of contents
 
@@ -39,12 +38,8 @@ With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and 
 
 ## Quick Start
 
-The above figure shows the dependency flow. One needs to have BlueSky running before BlueBird can operate.
-Twicher and Dodo similarly require BlueBird to be running in order to work.
-
 ### 1. Clone this repository
 
-Clone the repo:
 
 ```{bash}
 git clone https://github.com/alan-turing-institute/simurgh.git
@@ -56,9 +51,9 @@ All commands described in the subsequent sections are meant to be run from insid
 cd simurgh
 ```
 
-### 2. Run BlueBird and BlueSky (& Twicher) with Docker
+### 2. Run BlueBird, BlueSky & Twicher with Docker
 
-The easiest way to run BlueBird and BlueSky is through [Docker](https://www.docker.com).
+Make sure you have [Docker](https://www.docker.com/get-started) installed.
 
 If you have Docker installed and have cloned this repo then run:
 
@@ -125,7 +120,7 @@ To run the example, launch the notebook using the command below (this will autom
 
 We welcome contributions to all elements of the project.
 
-You can either help improve the overall documentation here or go to the repository for the part of the project you want to contribute to:
+You can either help improve the overall documentation here or go to the specific repository for the part of the project you want to contribute to:
 - [Bluebird](https://github.com/alan-turing-institute/bluebird)
 - [Twitcher](https://github.com/alan-turing-institutetwitcher)
 - [Dodo](https://github.com/alan-turing-institute/dodo)
