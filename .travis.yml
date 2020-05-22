@@ -1,0 +1,18 @@
+# safelist
+branches:
+  only:
+  - "master"
+
+language: python
+python:
+  - 3.6
+
+services:
+  - docker
+
+script:
+  - docker-compose up -d
+  - docker ps | grep -q twitcher
+  - docker ps | grep -q bluebird
+  - docker ps | grep -q bluesky
+  - docker-compose down
