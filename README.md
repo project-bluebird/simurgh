@@ -34,7 +34,7 @@ all work together to achieve this:
 
 - [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for BlueBird for monitoring the simulation
 
-With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twicher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance.
+With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twitcher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance.
 
 ## Quick Start
 
@@ -125,3 +125,7 @@ You can either help improve the overall documentation here or go to the specific
 - [Twitcher](https://github.com/alan-turing-institutetwitcher)
 - [Dodo](https://github.com/alan-turing-institute/dodo)
 - [Aviary](https://github.com/alan-turing-institute/aviary)
+
+### Documentation
+
+Documentation is hosted in the `docs` folder of this repository. Please refer to the `README.md` there for instructions on editing the docs websbite.
