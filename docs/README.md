@@ -23,3 +23,13 @@ If you want to add a new page to the website, please add a markdown file with th
 
 Use the `_data/team.yml` file to add/edit team members.
 
+# Working on the website locally
+
+The website folder contains `.devcontainers` folder that can be used in [VS Code Insiders](https://code.visualstudio.com/insiders/) for building the website locally in a Docker container, without installing Jekyll on your system. 
+
+To build and view locally, open the `docs` folder in VS Code Insiders and run the `Remote containers: Open in container` command. This builds/runs a Docker container with a working Jekyll installation. Open the integrated VS Code terminal and run the standard commands to build the website:
+
+```
+bundle install
+bundle exec jekyll serve
+```
