@@ -1,0 +1,55 @@
+# Site Settings
+title: Simurgh
+tagline: Simurgh - Research AI simulation platform for air traffic control
+email: egabasova@turing.ac.uk
+description: >
+  Simurgh - Research AI simulation platform for air traffic control
+baseurl: ""
+url: "https://alan-turing-institute.github.io/simurgh/"
+permalink: pretty
+favicon: /img/favicon.png
+
+#remote_theme: chrisrhymes/bulma-clean-theme
+theme: bulma-clean-theme
+
+plugins:
+  - kramdown
+  - rouge
+
+exclude: 
+  - Gemfile
+  - clean-theme.gemspec
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+livereload: true
+
+sass:
+  style: compressed
+  source_dir: _sass
+
+#google_analytics: UA-code-here
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      show_sidebar: true
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      image: https://via.placeholder.com/1200x800
+      show_sidebar: true
+
+markdown: kramdown
+highlighter: rouge
+

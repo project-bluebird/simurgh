@@ -1,0 +1,15 @@
+style: is-dark
+height: is-small
+items:
+  - title: Open source
+    call_to_action_name: Find us on Github
+    call_to_action_link: https://github.com/alan-turing-institute/simurgh
+    icon: fa-github
+    icon_brand: true
+  - title: Modular
+    subtitle: Extensible set of research tools
+    icon: fa-shapes
+  - title: Multi-language support
+    subtitle: Quick and easy to get started
+    icon: fa-terminal
+    
