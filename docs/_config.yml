@@ -25,6 +25,9 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md
+  - .devcontainer/
+  - .vscode/
 
 livereload: true
 
