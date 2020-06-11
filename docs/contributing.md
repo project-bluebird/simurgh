@@ -134,34 +134,4 @@ Client active node changed.
 
 ## Documentation
 
-The documentation for this project can be found at https://alan-turing-institute.github.io/simurgh/.
-Alternatively one can build and view these locally if one has `mkdocs`
-installed. To do this, in the top level of this repository, run:
-
-```bash
-mkdocs serve
-```
-
-The corresponding _readthedocs_ can be found on `localhost:8000`
-
-NOTE. If files are removed from 'docs/' in between builds, they make
-still hang around, a better command to run would be:
-
-```bash
-mkdocs build --clean
-```
-
-When docs have been built, they can then be deployed online to the public facing
-project page [here](https://alan-turing-institute.github.io/simurgh/) with the
-following command:
-
-```bash
-mkdocs gh-deploy
-```
-
-This will produce the following output:
-
-```bash
-INFO    -  Cleaning site directory
-INFO    -  Your documentation should shortly be available at: https://alan-turing-institute.github.io/simurgh/
-```
+The documentation for this project can be found at https://alan-turing-institute.github.io/simurgh/, and the corresponding source code can be found in the Simurgh repository in the [docs folder](https://github.com/alan-turing-institute/simurgh/tree/master/docs). When edited, it is automatically build into the website with Jekyll. 
