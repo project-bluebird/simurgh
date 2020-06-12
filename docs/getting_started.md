@@ -1,16 +1,11 @@
-[![Build Status](https://travis-ci.com/alan-turing-institute/simurgh.svg?branch=master)](https://travis-ci.com/alan-turing-institute/simurgh)
-
-# Simurgh
-
-*Simurgh* (pronounced _Seymour_) is an open source platform that supports developing
-and evaluating algorithms (AI agents) for air traffic control.
-
-## Table of contents
-
-- [Project overview](#project-overview)
-- [Quick start](#quick-start)
-- [Example usage](#example-usage)
-- [Contributing](#contributing)
+---
+title: Getting started
+subtitle: Running and interacting with the simulation platform
+layout: page
+show_sidebar: false
+hero_height: is-medium
+hero_image: /img/img-hero.png
+---
 
 ## Project overview
 
@@ -24,9 +19,11 @@ The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research
 platform for testing automated approaches to ATC. It consists of several elements that
 all work together to achieve this:
 
-![](./docs/img/simurgh-deps.png)
+![](/img/simurgh-deps.png)
 
-- [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with multiple air traffic simulators (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
+- [Bluesky](https://github.com/alan-turing-institute/bluesky) - open source air traffic simulator, a lightly adapted from the [Bluesky simulator](https://github.com/TUDelft-CNS-ATM/bluesky) developed at TU Delft
+
+- [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with the air traffic simulator
 
 - [Aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
 
@@ -34,7 +31,7 @@ all work together to achieve this:
 
 - [Twitcher](https://github.com/alan-turing-institute/twitcher) - front-end for BlueBird for monitoring the simulation
 
-With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twitcher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance.
+With an ATC simulator (e.g., BlueSky) and BlueBird running, one can observe and interact with the simulation via BlueBird using Python (PyDodo), R (rdodo) or Twicher. The aviary package allows one to synthetically generate ATC scenarios of increasing complexity to train agents on and provides metrics to score performance.
 
 ## Quick Start
 
@@ -106,26 +103,10 @@ See the Dodo [specification document](https://github.com/alan-turing-institute/d
 
 ## Example usage
 
-The [example notebook](examples/Example-pipeline.ipynb) shows how to interact with the simulation using PyDodo.
+The [example notebook](https://github.com/alan-turing-institute/simurgh/blob/master/examples/Example-pipeline.ipynb) shows how to interact with the simulation using PyDodo.
 
 To run the example, launch the notebook using the command below (this will automatically open the notebook in your browser):
 
- ```{bash}
+ ```bash
  jupyter lab examples/Example-pipeline.ipynb
  ```
-
-## Contributing
-
-🚧The project is still under development. å🚧
-
-We welcome contributions to all elements of the project.
-
-You can either help improve the overall documentation here or go to the specific repository for the part of the project you want to contribute to:
-- [Bluebird](https://github.com/alan-turing-institute/bluebird)
-- [Twitcher](https://github.com/alan-turing-institutetwitcher)
-- [Dodo](https://github.com/alan-turing-institute/dodo)
-- [Aviary](https://github.com/alan-turing-institute/aviary)
-
-### Documentation
-
-Documentation is hosted in the `docs` folder of this repository. Please refer to the `README.md` there for instructions on editing the docs websbite.

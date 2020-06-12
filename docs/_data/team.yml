@@ -1,0 +1,49 @@
+- name: Dr Evelina Gabasova
+  title: Principal Research Data Scientist
+  profile_img: img/team/evelina_gabasova.png
+  link: https://www.turing.ac.uk/people/researchers/evelina-gabasova
+  bio: |-
+    Project lead
+- name: Dr James Geddes
+  title: Principal Research Data Scientist
+  profile_img: img/team/james_geddes.png
+  link: https://www.turing.ac.uk/people/researchers/james-geddes
+  bio: |-
+    Initial project scoping
+- name: Dr Tim Hobson
+  title: Senior Research Software Engineer
+  profile_img: img/team/tim_hobson.png
+  link: https://www.turing.ac.uk/people/researchers/timothy-hobson
+  bio: |-
+    Simurgh platform development
+- name: Dr Radka Jersakova
+  title: Senior Research Data Scientist
+  profile_img: img/team/radka_jersakova.png
+  link: https://www.turing.ac.uk/people/researchers/radka-jersakova
+  bio: |-
+    Simurgh platform development
+- name: Ruairidh MacLeod
+  title: Applications Consultant, EPCC
+  profile_img: img/team/ruairidh_macleod.jpg
+  link: https://www.epcc.ed.ac.uk/about/staff/ruairidh-macleod
+  bio: |-
+    Simurgh platform development
+- name: Katrina Payne
+  title: Partnerships Development Lead 
+  profile_img: img/team/katrina_payne.png
+  link: https://www.turing.ac.uk/people/business-team/katrina-payne
+  bio: |-
+    Partnership between the Turing and NATS    
+- name: Tarek Allam
+  title: PhD student
+  profile_img: img/team/tarek_allam.jpg
+  link: http://www.tarekallamjr.com/
+  bio: |-
+    Contributed to the project as a part of his CDT placement with Turing Research Engineering
+- name: Dr Kasra Hosseini
+  title: Research Data Scientist
+  profile_img: img/team/kasra_hosseini.png
+  link: https://www.turing.ac.uk/people/researchers/kasra-hosseini
+  bio: |-
+        Initial agent development
+                
