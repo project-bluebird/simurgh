@@ -1,17 +1,2 @@
 - name: Getting started
   link: /getting_started/
-- name: Contributing
-  link: /contributing/
-- name: Documentation
-  link: /docs/
-  dropdown:
-    - name: Using Bluesky simulator
-      link: /user-docs/bluesky/
-    - name: Communicating with simulator with Bluebird API
-      link: /user-docs/bluebird/
-    - name: Building an agent with Dodo
-      link: /user-docs/dodo/
-    - name: Scenario generation with Aviary
-      link: /user-docs/aviary/
-    - name: Writing a reinforcement learning agent
-      link: /user-docs/agent/
