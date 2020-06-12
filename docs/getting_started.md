@@ -21,7 +21,9 @@ all work together to achieve this:
 
 ![](/img/simurgh-deps.png)
 
-- [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with multiple air traffic simulators (it supports the open source [Bluesky](https://github.com/alan-turing-institute/bluesky) simulator)
+- [Bluesky](https://github.com/alan-turing-institute/bluesky) - open source air traffic simulator, a lightly adapted from the [Bluesky simulator](https://github.com/TUDelft-CNS-ATM/bluesky) developed at TU Delft
+
+- [Bluebird](https://github.com/alan-turing-institute/bluebird) - a Flask-based API that handles communication with the air traffic simulator
 
 - [Aviary](https://github.com/alan-turing-institute/aviary) - package for generating ATC scenarios and performance evaluation metrics (dependency of Bluebird)
 
