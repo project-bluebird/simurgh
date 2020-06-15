@@ -4,7 +4,7 @@ subtitle: Running and interacting with the simulation platform
 layout: page
 show_sidebar: false
 hero_height: is-medium
-hero_image: /img/img-hero.png
+hero_image: img/img-hero.png
 ---
 
 ## Project overview

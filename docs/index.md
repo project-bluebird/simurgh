@@ -5,7 +5,7 @@ layout: page
 callouts: home_callouts
 show_sidebar: false
 hero_height: is-medium
-hero_image: /img/img-hero.png
+hero_image: img/img-hero.png
 meet_the_team: true
 ---
 
