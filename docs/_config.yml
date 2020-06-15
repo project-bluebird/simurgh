@@ -4,7 +4,7 @@ tagline: Simurgh - Research AI simulation platform for air traffic control
 email: egabasova@turing.ac.uk
 description: >
   Simurgh - Research AI simulation platform for air traffic control
-baseurl: ""
+baseurl: "https://alan-turing-institute.github.io/simurgh/"
 url: "https://alan-turing-institute.github.io/simurgh/"
 permalink: pretty
 favicon: /img/favicon.png
