@@ -1,0 +1,23 @@
+<div class="section">
+{% assign team=site.data.team %}
+{% assign rows = site.data.team.size | divided_by: 3.0 | ceil %}
+{% for i in (1..rows) %}
+  {% assign offset = forloop.index0 | times: 3 %}
+  <div class="columns">
+    {% for person in site.data.team limit:3 offset:offset %}
+        <div class="column is-4">
+            <p>
+                <figure class="image is-128x128">
+                    <img class="is-rounded" src="{{ person.profile_img }}">
+                </figure>            
+            </p>
+            <br />
+            <p class="title is-5">{{ person.name }}</p>
+            <p class="title is-6">{{ person.title }}</p>
+            <p>{{ person.bio | markdownify }}</p>
+            <p><a href={{ person.link }}>Full profile</a></p>
+        </div> 
+    {% endfor %}
+  </div>
+{% endfor %}
+</div>

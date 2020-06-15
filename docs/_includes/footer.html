@@ -1,0 +1,40 @@
+<footer class="footer">
+    <div class="container">
+        
+        {% if site.footer_menu %}
+        <div class="columns is-multiline">
+            {% for item in site.data[site.footer_menu] %}
+            <div class="column has-text-centered">
+                <div>
+                    <a href="{{ item.link | prepend: site.baseurl }}" class="link">{{ item.name }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                <figure class="image is-128x128">
+                    <a href="https://www.turing.ac.uk">
+                        <img src="/img/Turing-logo.png" alt="The Alan Turing Institute" />
+                    </a>
+                </figure>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <figure class="image is-128x128">
+                        <a href="https://www.nats.aero">
+                            <img src="/img/nats-logo.png" alt="NATS" />
+                        </a>
+                    </figure>
+                </div>
+                </div>
+        </nav>
+        <div>
+            The Alan Turing Institute, 2020
+        </div>
+    </div>
+</footer>
