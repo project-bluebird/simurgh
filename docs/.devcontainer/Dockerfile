@@ -23,8 +23,11 @@ RUN apt-get update \
     && apt-get install -y \
         make \
 		build-essential \
+        patch \
 		ruby \
         ruby-dev \
+        zlib1g-dev \
+        liblzma-dev \
     #
     # Install jekyll
     && gem install \
@@ -42,4 +45,9 @@ RUN apt-get update \
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* 
+
+# Set default locale for the environment
+ENV LC_ALL C.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8

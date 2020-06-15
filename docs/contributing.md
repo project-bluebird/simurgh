@@ -4,7 +4,7 @@ subtitle: The project is under development
 layout: page
 show_sidebar: false
 hero_height: is-medium
-hero_image: /img/img-hero.png
+hero_image: img/img-hero.png
 ---
 
 # Developers guide

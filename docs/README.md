@@ -31,5 +31,5 @@ To build and view locally, open the `docs` folder in VS Code Insiders and run th
 
 ```
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve --baseurl ""
 ```
