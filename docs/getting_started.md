@@ -19,7 +19,7 @@ The [Simurgh](https://en.wikipedia.org/wiki/Simurgh) project provides a research
 platform for testing automated approaches to ATC. It consists of several elements that
 all work together to achieve this:
 
-![](/img/simurgh-deps.png)
+![](img/simurgh-deps.png)
 
 - [Bluesky](https://github.com/alan-turing-institute/bluesky) - open source air traffic simulator, a lightly adapted from the [Bluesky simulator](https://github.com/TUDelft-CNS-ATM/bluesky) developed at TU Delft
 

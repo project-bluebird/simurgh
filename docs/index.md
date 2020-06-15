@@ -67,7 +67,7 @@ Simurgh is an open source ATC simulation and experimentation platform.
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by2">
-            <img src="/img/air_traffic_simulator.jpg" alt="Air traffic simulator at NATS">
+            <img src="img/air_traffic_simulator.jpg" alt="Air traffic simulator at NATS">
           </figure>
         </div>
         <div class="card-content">
@@ -85,7 +85,7 @@ Simurgh is an open source ATC simulation and experimentation platform.
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by2">
-            <img src="/img/air_traffic_controller.jpg" alt="Air traffic controller at NATS">
+            <img src="img/air_traffic_controller.jpg" alt="Air traffic controller at NATS">
           </figure>
         </div>
         <div class="card-content">
