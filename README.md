@@ -1,3 +1,5 @@
+Active development moved under[Project BlueBird](https://github.com/project-bluebird).
+
 [![Build Status](https://travis-ci.com/alan-turing-institute/simurgh.svg?branch=master)](https://travis-ci.com/alan-turing-institute/simurgh)
 
 # Simurgh
